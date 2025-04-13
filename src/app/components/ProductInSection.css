@@ -1,0 +1,116 @@
+.product-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+.product-banner {
+  flex: 1 1 40%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.product-banner img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.product-content {
+  flex: 1 1 55%;
+  font-family: 'Segoe UI', sans-serif;
+}
+.stockist-form input:focus,
+.stockist-form select:focus {
+  outline: none;           /* Removes default outline */
+  box-shadow: none;        /* Removes any shadow or glow */
+  border-bottom: 1px solid #ccc;  /* Optional: set a custom border */
+}
+.stockist-form input:hover,
+.stockist-form select:hover {
+  border-color: #999;
+  transition: border-color 0.3s ease;
+}
+.stockist-form input,
+.stockist-form select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.stockist-form input:focus,
+.stockist-form select:focus {
+  border-color: #77b700;
+  box-shadow: 0 0 0 3px rgba(119, 183, 0, 0.1);
+  transform: scale(1.02); /* slight scale effect */
+  outline: none;
+}
+
+
+.product-content h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.product-content p {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  padding: 14px 18px;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.nutrition-table thead th {
+  color: #fff;
+  background-color: #820c0c; /* fallback, overridden by inline */
+  font-weight: 600;
+}
+
+.nutrition-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-banner,
+  .product-content {
+    width: 100%;
+  }
+
+  .product-banner {
+    padding: 20px;
+  }
+}

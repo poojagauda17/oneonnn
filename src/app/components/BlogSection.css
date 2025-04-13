@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
+
+.blog-carousel {
+  padding: 80px 20px;
+  background-color: #fff;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+     max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-carousel-heading {
+  font-size: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 40px;
+  color: #E9D127 ;
+  word-spacing: 8px;
+}
+
+.blog-slide-inner {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.blog-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.blog-caption {
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+.blog-caption:hover{
+  color : #E9D127 ;
+}
+@media (max-width: 768px) {
+  .blog-carousel-heading {
+    font-size: 28px;
+  }
+
+  .blog-caption {
+    font-size: 13px;
+  }
+
+  .blog-image {
+    height: 220px;
+  }
+}

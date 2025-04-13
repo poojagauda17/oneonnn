@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
+
+.testimonial-carousel {
+  padding: 80px 20px;
+  background: url('/images/bg-wave.png') center/cover no-repeat, #6a1b9a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  
+}
+.testimonial-swiper{
+   max-width: 1200px;
+  margin: 0 auto;
+}
+.testimonial-heading {
+  font-size: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 50px;
+  color: #fff;
+  word-spacing: 8px;
+}
+
+.testimonial-slide {
+  background: transparent;
+  padding: 20px;
+  text-align: left;
+  color: #fff;
+}
+
+.testimonial-slide h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.testimonial-slide p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #f1f1f1;
+}
+
+.testimonial-slide strong {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .testimonial-heading {
+    font-size: 28px;
+  }
+
+  .testimonial-slide h3 {
+    font-size: 18px;
+  }
+
+  .testimonial-slide p {
+    font-size: 13px;
+  }
+}
