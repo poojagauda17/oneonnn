@@ -5,7 +5,7 @@
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 0 20px;
+  padding: 150 20px 80px 20px;
 }
 .product-grid {
   display: grid;
