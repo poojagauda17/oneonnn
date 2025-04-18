@@ -3,6 +3,8 @@
 .hero-banner {
   width: 100%;
   overflow: hidden;
+  
+  
 }
 
 .hero-slide {
@@ -46,6 +48,7 @@
 
 .swiper-pagination-bullet-active {
   opacity: 1;
+  background: var(--primary) !important;
 }
 
 @media screen and (max-width: 768px) {

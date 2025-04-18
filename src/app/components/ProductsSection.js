@@ -2,29 +2,18 @@ import React from "react";
 import "./ProductsSection.css";
 import Link from "next/link";
 
-const productImages = [
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-  "/images/MangoJuice.jpg",
-];
-
-export default function ProductGrid() {
+export default function ProductGrid({ productList = [] }) {
+  if (!productList.length) return null;
   return (
     <section className="products-container">
       <div className="product-grid">
-        {productImages.map((src, index) => (
+        {productList.map((product, index) => (
           <Link key={index} href={`/products/${index}`}>
             <div key={index} className="product-image-card">
-              <img src={src} alt={`Product ${index + 1}`} />
+              <img
+                src={product.product_image || product.imageUrl}
+                alt={`Product ${index + 1}`}
+              />
             </div>
           </Link>
         ))}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
 
 .contact-section {
-  padding: 150px 100px 80px 100px;
+  padding: 140px 100px 80px 100px;
   background: #fff;
   font-family: 'Poppins', sans-serif;
 }
@@ -83,7 +83,7 @@
 
 .contact-form button {
   align-self: flex-start;
-  background: #0011D5;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -96,7 +96,9 @@
 }
 
 .contact-form button:hover {
-  background: #000;
+  border:1px solid var(--primary);
+  background-color: transparent;
+  color: #000;
 }
 .map-wrapper {
   margin-top: 50px;

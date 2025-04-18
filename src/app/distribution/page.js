@@ -1,21 +1,18 @@
 "use client";
 
-import React from "react";
-import { FaUser, FaSearch } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import HeaderSection from "../components/HeaderSection";
-import OurStory from "../components/OurStory";
 import FooterSection from "../components/FooterSection";
+import OurDistributionSection from "../components/OurDistributionSection";
 
-const WhyChooseUs = () => {
+const Distribution = () => {
   return (
     <div>
       <HeaderSection />
-
-      <OurStory />
-
+      <OurDistributionSection />
       <FooterSection />
     </div>
   );
 };
 
-export default WhyChooseUs;
+export default Distribution;

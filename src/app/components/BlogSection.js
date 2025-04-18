@@ -44,7 +44,9 @@ const blogArticles = [
   },
 ];
 
-export default function BlogCarousel() {
+export default function BlogCarousel({ blogList = [] }) {
+  console.log("Received blog:", blogList);
+
   return (
     <section className="blog-carousel">
       <h2 className="blog-carousel-heading">
@@ -66,15 +68,17 @@ export default function BlogCarousel() {
           1024: { slidesPerView: 3 },
         }}
       >
-        {blogArticles.map((article, index) => (
+        {(blogList || []).map((article, index) => (
           <SwiperSlide key={index} className="blog-slide">
             <div className="blog-slide-inner">
               <img
-                src={article.image}
+                src={article.image || article.imageUrl}
                 alt={`Blog ${index + 1}`}
                 className="blog-image"
               />
-              <p className="blog-caption">{article.caption}</p>
+              <p className="blog-caption">
+                {article.title || article.description}
+              </p>
             </div>
           </SwiperSlide>
         ))}

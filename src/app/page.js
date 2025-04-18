@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser, FaSearch } from "react-icons/fa";
 import HeaderSection from "./components/HeaderSection";
 import HeroCarousel from "./components/HeroSection";
@@ -8,26 +8,53 @@ import AboutSection from "./components/AboutSection";
 import ProductSection from "./components/ProductsSection";
 import CalltoAction from "./components/CalltoAction";
 import DistributionSection from "./components/DistributionSection";
-import WhyChooseUsSection from "./components/WhyChooseSection";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import BlogSection from "./components/BlogSection";
-import ContactForm from "./components/ContactForm";
 import FooterSection from "./components/FooterSection";
 
+import {
+  getAllHomeScreenList,
+  getAllBlogList,
+  getAllProductList,
+} from "./utils/employee";
+
 const HeroSection = () => {
+  const [bannerList, setBannerList] = useState([]);
+  const [blogList, setBlogList] = useState([]);
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const banners = await getAllHomeScreenList();
+        const blogs = await getAllBlogList();
+        const products = await getAllProductList();
+
+        console.log("✅ Blogs:", blogs);
+        console.log("✅ Products:", products);
+
+        setBannerList(banners?.payload || []);
+        setBlogList(blogs?.payload || []);
+        setProductList(products?.payload || []);
+      } catch (error) {
+        console.error("API fetch error:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <HeaderSection />
-      <HeroCarousel />
+      <HeroCarousel bannerList={bannerList} />
 
       <AboutSection />
-      <ProductSection />
+      <ProductSection productList={productList} />
       <CalltoAction />
       <DistributionSection />
-      <WhyChooseUsSection />
-      <BlogSection />
+      <BlogSection blogList={blogList} />
       <TestimonialCarousel />
-      <ContactForm />
       <FooterSection />
     </div>
   );

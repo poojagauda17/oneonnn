@@ -1,18 +1,17 @@
-import React from 'react'
-import HeaderSection from '../components/HeaderSection';
-import ContactForm from '../components/ContactForm';
-import FooterSection from '../components/FooterSection';
+import React from "react";
+import HeaderSection from "../components/HeaderSection";
+import ContactForm from "../components/ContactForm";
+import FooterSection from "../components/FooterSection";
 
 const page = () => {
   return (
     <div>
-                    <HeaderSection />
+      <HeaderSection />
 
-            <ContactForm />
-                  <FooterSection />
-
+      <ContactForm className="mt-2" />
+      <FooterSection />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

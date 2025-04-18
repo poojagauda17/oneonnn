@@ -1,25 +1,26 @@
 /* Base Styles */
 .navbar {
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed;
   width: 100%;
   z-index: 1000;
-}
+    position: fixed;
 
+  
+}
+/* .hero-container{
+  height: 96.19px
+} */
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 25px 95px;
+  
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #0050c8;
+  color: #fff;
 }
 .logo span {
   color: red;
@@ -27,13 +28,13 @@
 
 .nav-links {
   display: flex;
-  gap: 3.5rem;
+  gap: 2.5rem;
   align-items: center;
   font-size: 18px;
 }
 
 .nav-link {
-  color: #0040b5;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   position: relative;
@@ -86,7 +87,7 @@
 
 /* Stockist Button */
 .stockist-btn {
-  background-color: #0040b5;
+  background-color: #e9d127;
   color: white;
   border: none;
   padding: 0.6rem 1rem;
@@ -155,7 +156,7 @@
 
 .animated-input:focus {
   outline: none;
-  border-bottom-color: #0040b5;
+  border-bottom-color: var(--primary);
 }
 
 .inquiry-select {
@@ -167,7 +168,7 @@
 }
 
 .submit-btn {
-  background: #84cc16;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 0.8rem;
@@ -175,7 +176,11 @@
   font-weight: bold;
   cursor: pointer;
 }
-
+.submit-btn:hover{
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: #000;
+}
 .close-btn {
   background: transparent;
   border: none;
@@ -215,4 +220,11 @@
   .hamburger {
     display: flex;
   }
+  .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 20px;
+  
+}
 }

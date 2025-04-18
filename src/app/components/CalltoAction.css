@@ -1,55 +1,105 @@
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0px
+}
 .cta-section {
-  background-image: url("/images/why-chouse-bg.png"); /* Put your background image here */
+  background-image: url("/images/why-chouse-bg.png"); /* ✅ replace with your actual path */
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
+  padding: 70px 20px 0px 20px;
   position: relative;
-  padding: 100px 20px;
+  height: 600px;
+      display: flex;
+          margin: 0px 40px;
+;
+    justify-content: center;
+}
+.cta-section::before {
+  content: "";
+  position: relative;
+  inset: 0;
+  z-index: 0;
+}
+
+.cta-container {
+  z-index: 1; /* content above overlay */
+}
+
+.cta-box {
+  flex: 1;
+  min-width: 250px; /* ensures proper stacking */
+  padding: 2rem;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.cta-box:last-child {
+  border-right: none;
+}
+
+.cta-box img {
+  width: 40px;
+  margin-bottom: 1rem;
+}
+
+.cta-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-box p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.cta-box a {
+  color: #e9d127;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ✅ Scroll to top button */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #6f2971;
   color: white;
-
-}
-
-.cta-overlay {
-  padding: 100px 20px;
-  border-radius: 12px;
-
-}
-
-.cta-content h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-
-.cta-content p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.cta-content button {
-  background-color: #E9D127;
-  color: #000;
   border: none;
-  padding: 12px 30px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 16px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
-.cta-content button:hover {
-  background-color: #d1b719;
-}
+/* ✅ RESPONSIVE MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
-  .cta-content h2 {
-    font-size: 30px;
+  .cta-box {
+    flex: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
   }
 
-  .cta-content p {
-    font-size: 16px;
+  .cta-box:last-child {
+    border-bottom: none;
+  }
+  .cta-container{
+    position: static;
   }
 }

@@ -7,7 +7,7 @@ import "./ProductInSection.css";
 const productData = [
   {
     name: "Kokum Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -23,7 +23,7 @@ const productData = [
   },
   {
     name: "Jeera Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -39,7 +39,7 @@ const productData = [
   },
   {
     name: "Buttermilk Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -55,7 +55,7 @@ const productData = [
   },
   {
     name: "Mango Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -71,7 +71,7 @@ const productData = [
   },
   {
     name: "apple Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -87,7 +87,7 @@ const productData = [
   },
   {
     name: "Bananana Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -103,7 +103,7 @@ const productData = [
   },
   {
     name: "Lichi Juice",
-    image: "/images/kokum.jpg",
+    image: "/images/LKMG.jpg",
     bgColor: "#820c0c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
@@ -151,7 +151,9 @@ export default function ProductDetails() {
           <tbody>
             {product.nutrition.map((item, idx) => (
               <tr key={idx}>
-                <td>{item.label}</td>
+                <td>
+                  <p className="nutrition-table-label">{item.label}</p>
+                </td>
                 <td>{item.value}</td>
               </tr>
             ))}

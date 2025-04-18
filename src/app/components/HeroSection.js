@@ -7,22 +7,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./HeaderSection.css";
 
-const slides = [
-  {
-    image: "/images/HeroBanner1.jpg",
-  },
-  {
-    image: "/images/HeroBanner1.jpg",
-  },
-  {
-    // title: "Lively Lime Spark",
-    // highlight: "Refresh Your Senses",
-    image: "/images/HeroBanner1.jpg",
-    // background: "#E9D127",
-  },
-];
-
-export default function HeroBanner() {
+export default function HeroBanner({ bannerList = [] }) {
+  console.log("Received bannerList in HeaderSection:", bannerList);
+  if (!bannerList.length) {
+    return <p>Loading banners...</p>; // optional fallback
+  }
   return (
     <section className="hero-banner">
       <Swiper
@@ -31,18 +20,21 @@ export default function HeroBanner() {
         autoplay={{ delay: 5000 }}
         loop={true}
       >
-        {slides.map((slide, index) => (
+        {bannerList.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
               className="hero-slide"
               style={{ backgroundColor: slide.background }}
             >
               <div className="hero-content">
-                {/* <h4>{slide.title}</h4> */}
-                {/* <h1>{slide.highlight}</h1> */}
+                {slide.title && <h4>{slide.title}</h4>}
+                {slide.highlight && <h1>{slide.highlight}</h1>}
               </div>
               <div className="hero-image">
-                <img src={slide.image} alt={slide.title} />
+                <img
+                  src={slide.image || slide.imageUrl}
+                  alt={slide.title || `Banner ${index + 1}`}
+                />
               </div>
             </div>
           </SwiperSlide>
