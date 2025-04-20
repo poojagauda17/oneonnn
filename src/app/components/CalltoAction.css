@@ -73,9 +73,34 @@
   text-decoration: underline;
   border-bottom: 2px solid transparent;
 }
+.pencil-img{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.circle-img{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.star-img{
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.pencil-img img,
+.circle-img img,
+.star-img img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.pencil-img:hover img,
+.circle-img:hover img,
+.star-img:hover img {
+  transform: scale(1.1); /* zoom-in on hover */
+}
 
 .franchise-link:hover {
-  border-color: #722f8b;
 }
 
 /* Responsive */

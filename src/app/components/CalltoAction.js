@@ -8,7 +8,9 @@ export default function FranchiseSection() {
     <section className="franchise-section">
       <div className="franchise-joined-card">
         <div className="card-column left">
-          <FaMagic className="franchise-icon" />
+         <div className="pencil-img">
+         <img src="/pencil.png"/>
+         </div>
           <h3>Why choose us</h3>
           <p>
             We want to be the first choice in all of our beverages existing and
@@ -18,7 +20,9 @@ export default function FranchiseSection() {
         </div>
 
         <div className="card-column center">
-          <FaBullseye className="franchise-icon" />
+        <div className="circle-img">
+         <img src="/circle.png"/>
+         </div>
           <h3>Distribution Centre</h3>
           <p>
             Hana, the refreshing organic drink, has captivated taste buds across
@@ -28,7 +32,9 @@ export default function FranchiseSection() {
         </div>
 
         <div className="card-column right">
-          <FaStar className="franchise-icon" />
+        <div className="star-img">
+         <img src="/star.png"/>
+         </div>
           <h3>Need Franchise</h3>
           <p>
             Success in franchising often depends on your dedication,

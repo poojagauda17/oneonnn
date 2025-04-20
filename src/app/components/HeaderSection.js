@@ -133,7 +133,7 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
             <div className="stockist-modal fullscreen-modal" onClick={(e) => e.stopPropagation()}>
               <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
               <h2 className="modal-heading">
-                <img src="/stocker.png" className="stocker-img" alt="stocker" />
+                {/* <img src="/stocker.png" className="stocker-img" alt="stocker" /> */}
                 Become a Supplier
               </h2>
               <p className="modal-subtext">
