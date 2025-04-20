@@ -12,8 +12,8 @@
 
 .blog-carousel-heading {
   font-size: 36px;
-  font-family: 'Bebas Neue', sans-serif;
-  margin-bottom: 40px;
+  font-family: Poppins, sans-serif;
+  margin-bottom: 40px !important;
   color: #E9D127 ;
   word-spacing: 8px;
 }

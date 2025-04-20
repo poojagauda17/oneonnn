@@ -11,6 +11,11 @@ import DistributionSection from "./components/DistributionSection";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import BlogSection from "./components/BlogSection";
 import FooterSection from "./components/FooterSection";
+import Flovors from "./components/FlovorSection";
+import AllFlovorsSection from "./components/AllFlovorsSection";
+import Classic from "./components/Classic";
+
+
 
 import {
   getAllHomeScreenList,
@@ -46,13 +51,16 @@ const HeroSection = () => {
 
   return (
     <div>
-      <HeaderSection />
+      <HeaderSection productList={productList}/>
       <HeroCarousel bannerList={bannerList} />
 
       <AboutSection />
+      <Flovors/>
+      <AllFlovorsSection/>
       <ProductSection productList={productList} />
       <CalltoAction />
       <DistributionSection />
+      <Classic />
       <BlogSection blogList={blogList} />
       <TestimonialCarousel />
       <FooterSection />

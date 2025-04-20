@@ -1,63 +1,43 @@
-// components/CallToActionSection.jsx
 "use client";
 
-import React, { useState, useEffect } from "react";
 import "./CalltoAction.css";
+import { FaMagic, FaBullseye, FaStar } from "react-icons/fa";
 
-const CallToActionSection = () => {
-  const [showArrow, setShowArrow] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowArrow(window.scrollY > 200);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export default function FranchiseSection() {
   return (
-    <section className="cta-section">
-      <div className="cta-container">
-        <div className="cta-box">
-          <img src="/icons/icon1.png" alt="Why Choose Us" />
+    <section className="franchise-section">
+      <div className="franchise-container">
+        <div className="franchise-card">
+          <FaMagic className="franchise-icon" />
           <h3>Why choose us</h3>
           <p>
             We want to be the first choice in all of our beverages existing and
-            in pipelines throughout the country
+            in pipelines throughout the country.
           </p>
-          <a href="/whyChooseUs">KNOW MORE</a>
+          <a href="/ourstory" className="franchise-link">KNOW MORE</a>
         </div>
-        <div className="cta-box">
-          <img src="/icons/icon2.png" alt="Distribution Centre" />
+
+        <div className="franchise-card">
+          <FaBullseye className="franchise-icon" />
           <h3>Distribution Centre</h3>
           <p>
             Hana, the refreshing organic drink, has captivated taste buds across
             various regions, including INDIA and GCC Countries.
           </p>
-          <a href="/whyChooseUs">GET IN TOUCH</a>
+          <a href="/distribution" className="franchise-link">GET IN TOUCH</a>
         </div>
-        <div className="cta-box">
-          <img src="/icons/icon3.png" alt="Need Franchise" />
+
+        <div className="franchise-card">
+          <FaStar className="franchise-icon" />
           <h3>Need Franchise</h3>
           <p>
-            Success in franchising often depends on your dedication, adherence
-            to the franchisor's systems.
+            Success in franchising often depends on your dedication,
+            adherence to the franchisor’s systems.
           </p>
-          <a href="#become-partner">BECOME OUR PARTNER</a>
+          <a href="/Franchise" className="franchise-link">BECOME OUR PARTNER</a>
         </div>
       </div>
-
-      {showArrow && (
-        <button className="scroll-top" onClick={scrollToTop}>
-          ↑
-        </button>
-      )}
     </section>
   );
-};
-
-export default CallToActionSection;
+}

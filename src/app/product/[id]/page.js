@@ -1,18 +1,18 @@
 "use client";
 
 import React from "react";
-import { FaUser, FaSearch } from "react-icons/fa";
-import HeaderSection from "../components/HeaderSection";
-import WhyChooseUsSection from "../components/WhyChooseSection";
-import FooterSection from "../components/FooterSection";
-import { useState, useEffect } from "react";
-
+import HeaderSection from "../../components/HeaderSection";
+import FooterSection from "../../components/FooterSection";
+import ProductInSection from "../../components/ProductInSection";
 import {
   getAllProductList,
-} from "../utils/employee"
+} from "../../utils/employee";
+import { useState, useEffect } from "react";
 
-const WhyChooseUs = () => {
-     const [productList, setProductList] = useState([]);
+
+
+const HeroSection = () => {
+      const [productList, setProductList] = useState([]);
       useEffect(() => {
         const fetchData = async () => {
           try {
@@ -29,15 +29,14 @@ const WhyChooseUs = () => {
     
         fetchData();
       }, []);
+  
   return (
     <div>
       <HeaderSection productList={productList} />
-
-      <WhyChooseUsSection />
-
+      <ProductInSection />
       <FooterSection />
     </div>
   );
 };
 
-export default WhyChooseUs;
+export default HeroSection;

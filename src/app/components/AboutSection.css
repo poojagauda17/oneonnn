@@ -1,58 +1,88 @@
 .about-section {
-  padding: 70px 0 0px 0px;
-  background-color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  padding: 70px 40px 7px 40px ;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #0f9d58, #21c57c);
+  color: white;
+  font-family: 'Poppins', sans-serif;
   flex-wrap: wrap;
-  padding: 0 20px;
 }
-
-.about-content {
+.about-section-section{
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.about-left {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.about-content h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem; /* Adjust based on your design */
-  letter-spacing: 1px; /* Better letter spacing */
-  word-spacing: 4px;   /* More breathing room between words */
-  color: #f2c300;      /* Your yellow shade */
-  margin-bottom: 1rem;
+.can-image {
+  object-fit: contain;
 }
 
-.about-content p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #666;
-  margin-bottom: 15px;
+.orange-can {
+  transform: rotate(-15deg);
 }
 
-.about-image {
+.about-right {
   flex: 1;
-  text-align: center;
+  padding: 20px 30px;
+  min-width: 300px;
 }
 
-.about-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.about-heading {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-  .about-container {
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f0f0 !important;
+  margin-bottom: 25px;
+}
+
+.about-button {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .about-section {
     flex-direction: column;
     text-align: center;
   }
 
-  .about-content h2 {
-    font-size: 28px;
+  .about-heading {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+
+  .about-button {
+    margin: 0 auto;
   }
 }

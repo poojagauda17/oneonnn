@@ -17,7 +17,7 @@
 
 .contact-left {
   flex: 1;
-  min-width: 450px;
+  min-width: 486px;
   background: #fdfdfd;
   padding: 30px;
   border-radius: 12px;
@@ -73,7 +73,7 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #0011D5;
+  border-color: var(--primary);
 }
 
 .contact-form textarea {

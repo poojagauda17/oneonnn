@@ -8,7 +8,7 @@ export default function ProductGrid({ productList = [] }) {
     <section className="products-container">
       <div className="product-grid">
         {productList.map((product, index) => (
-          <Link key={index} href={`/products/${index}`}>
+          <Link key={index} href={`/product/${index}`}>
             <div key={index} className="product-image-card">
               <img
                 src={product.product_image || product.imageUrl}

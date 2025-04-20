@@ -3,12 +3,13 @@
   width: 100%;
   z-index: 1000;
     position: fixed;
+    background-color: var(--secondaryColor);
 
   
 }
-/* .hero-container{
+.hero-container{
   height: 96.19px
-} */
+}
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -40,11 +41,11 @@
   position: relative;
 }
 .nav-link.active{
-  color: #E9D127;
+  color: var(--thirdColor);
 
 }
 .nav-link:hover{
-    color: #E9D127;
+    color: var(--thirdColor);
 
 }
 .nav-link.active::after {
@@ -52,7 +53,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: #E9D127;
+  background: var(--thirdColor);
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -61,6 +62,8 @@
 .dropdown {
   position: relative;
   cursor: pointer;
+  width: auto;   /* remove width limitation */
+
 }
 
 .dropdown-content {
@@ -68,7 +71,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
+  background: var(--secondaryColor);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   z-index: 1000;
@@ -87,7 +90,7 @@
 
 /* Stockist Button */
 .stockist-btn {
-  background-color: #e9d127;
+  background-color: var(--thirdColor);
   color: white;
   border: none;
   padding: 0.6rem 1rem;
@@ -107,7 +110,7 @@
 .hamburger .bar {
   height: 3px;
   width: 25px;
-  background: #0040b5;
+  background: #fff;
   border-radius: 5px;
 }
 
@@ -138,6 +141,70 @@
   flex-direction: column;
   gap: 1rem;
 }
+/* Mega menu - full width */
+.mega-menu {
+  position: fixed;               /* fix to the entire viewport */
+  top: 65px;                     /* match your navbar height */
+  left: 0;                       /* align to screen edge */
+  width: 100vw;                  /* full width */
+  background-color: #1f1f1f;
+  padding: 30px 60px;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+
+.mega-menu.show {
+  display: block;
+}
+
+
+.mega-menu.show {
+  display: block;
+}
+
+/* Grid layout inside mega menu */
+.mega-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+/* Each product box */
+.product-tile {
+  text-align: center;
+  padding: 15px 10px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.product-tile:hover {
+  background-color: #3b3b3b;
+}
+
+.product-tile img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  display: block;
+
+}
+
+.product-tile p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+}
+.product-hover-area {
+  position: relative;
+}
+
+
 
 .row {
   display: flex;
@@ -190,6 +257,46 @@
   right: 1rem;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .mega-menu {
+    position: static;
+    padding: 0;
+    background: #fff;
+  }
+
+  .mega-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    height: 300px;
+  }
+
+  .product-tile {
+    display: flex;
+    align-items: left;
+    border-bottom: 1px solid #eee;
+    padding: 10px ;
+  }
+
+  .product-tile img {
+    width: 40px;
+    height: auto;
+    margin-right: 12px;
+  }
+
+  .product-tile p {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    color: white;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .mega-menu.show {
+    display: block;
+  }
+}
 
 /* Responsive */
 @media screen and (max-width: 768px) {
@@ -197,7 +304,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
+    background: var(--secondaryColor);
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
@@ -227,4 +334,49 @@
   margin: 20px 20px;
   
 }
+}.mega-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mega-menu::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 1000;
+  }
+
+  .mega-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .product-tile {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .product-tile img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    display: none;
+  }
+
+  .product-tile p {
+    font-size: 14px;
+    margin: 0;
+    color: #222;
+  }
 }

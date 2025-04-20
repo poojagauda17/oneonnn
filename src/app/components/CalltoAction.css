@@ -1,105 +1,71 @@
-.cta-container {
+.franchise-section {
+  background: url("/image/Pudina-Banner.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 70px;
+}
+
+.franchise-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  bottom: 0px
 }
-.cta-section {
-  background-image: url("/images/why-chouse-bg.png"); /* ✅ replace with your actual path */
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  padding: 70px 20px 0px 20px;
-  position: relative;
-  height: 600px;
-      display: flex;
-          margin: 0px 40px;
-;
-    justify-content: center;
-}
-.cta-section::before {
-  content: "";
-  position: relative;
-  inset: 0;
-  z-index: 0;
-}
-
-.cta-container {
-  z-index: 1; /* content above overlay */
-}
-
-.cta-box {
-  flex: 1;
-  min-width: 250px; /* ensures proper stacking */
-  padding: 2rem;
-  text-align: center;
-  border-right: 1px solid #ddd;
-  box-sizing: border-box;
-}
-
-.cta-box:last-child {
-  border-right: none;
-}
-
-.cta-box img {
+.franchise-card svg{
   width: 40px;
-  margin-bottom: 1rem;
+  margin: auto;
+}
+.franchise-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.cta-box h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+.franchise-card:hover {
+  transform: translateY(-8px);
 }
 
-.cta-box p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 1rem;
+.franchise-icon {
+  font-size: 30px;
+  color: #70c300;
+  margin-bottom: 16px;
 }
 
-.cta-box a {
-  color: #e9d127;
-  font-weight: bold;
+.franchise-card h3 {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.franchise-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.franchise-link {
+  color: #8e44ad;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
   text-decoration: underline;
 }
 
-/* ✅ Scroll to top button */
-.scroll-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: #6f2971;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 999;
+.franchise-link:hover {
+  text-decoration: underline;
 }
 
-/* ✅ RESPONSIVE MEDIA QUERIES */
-
-@media screen and (max-width: 768px) {
-  .cta-box {
-    flex: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .cta-box:last-child {
-    border-bottom: none;
-  }
-  .cta-container{
-    position: static;
+/* Responsive */
+@media (max-width: 992px) {
+  .franchise-container {
+    grid-template-columns: 1fr;
   }
 }
