@@ -42,10 +42,11 @@ export default function FlovorCarousel() {
             key={i}
             className="flavor-card"
             style={{
-              transform: `translateX(${offset * 220}px) scale(${1 - Math.abs(offset) * 0.2})`,
+              transform: `translateX(${offset * 290}px) scale(${1 - Math.abs(offset) * 0.2})`,
               zIndex: 10 - Math.abs(offset),
               opacity: Math.abs(offset) > 2 ? 0 : 1,
             }}
+            
           >
             <Image
               src={product.image}

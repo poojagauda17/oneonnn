@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
 
 .contact-section {
-  padding: 140px 100px 80px 100px;
+  padding: 70px 100px 80px 100px;
   background: #fff;
   font-family: 'Poppins', sans-serif;
 }
@@ -11,17 +11,21 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 130px;
   align-items: flex-start;
+  gap: 0px;
+}
+.contact-section-container{
+  width: 45%;
 }
 
 .contact-left {
   flex: 1;
-  min-width: 486px;
+  width: 30%;
   background: #fdfdfd;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.06);
+  margin-right: 80px;
 }
 
 .contact-left h2 {
@@ -137,5 +141,8 @@
   }
   .contact-container{
     gap: 30px;
+  }
+  .contact-section-container{
+    width: 100%;
   }
 }

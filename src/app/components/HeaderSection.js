@@ -1,25 +1,61 @@
+// ✅ Step 3: HeaderSection.jsx
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import "./HeaderSection.css";
 import Image from "next/image";
+import "./HeaderSection.css";
 
-
-
-export default function HeaderSection({ productList = [] }) {
+export default function HeaderSection({ productList = [], onSupplierSubmit }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
 
-  const isActive = (path) => pathname === path;
+  const [form, setForm] = useState({
+    name: "",
+    business_name: "",
+    state: "",
+    city: "",
+    email_id: "",
+    mobile_no: "",
+    existing_distribution_experience: "",
+    want_to_join: "",
+  });
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains("stockist-modal-overlay")) {
       setOpen(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await onSupplierSubmit(form);
+      console.log("✅ Submitted:", res);
+      alert("Application submitted successfully!");
+      setForm({
+        name: "",
+        business_name: "",
+        state: "",
+        city: "",
+        email_id: "",
+        mobile_no: "",
+        existing_distribution_experience: "",
+        want_to_join: "",
+      });
+      setOpen(false);
+    } catch (err) {
+      console.error("❌ Submission failed:", err);
+      alert("Something went wrong. Please try again.");
     }
   };
 
@@ -35,15 +71,16 @@ export default function HeaderSection({ productList = [] }) {
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
+  const isActive = (path) => pathname === path;
+
   return (
     <section className="hero-container">
       <header className="navbar">
         <div className="header-container">
           <div className="logo">
             <Link href="/">
-          <img src="/oneonn-logo.png" alt="logo" className="header-logo" />
+              <img src="/oneonn-logo.png" alt="logo" className="header-logo" />
             </Link>
-
           </div>
 
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -54,13 +91,7 @@ export default function HeaderSection({ productList = [] }) {
 
           <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
             <Link href="/" className={isActive("/") ? "nav-link active" : "nav-link"}>Home</Link>
-
-            <div
-              className="dropdown"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-              onClick={() => setDropdownOpen(!dropdownOpen)}
-            >
+            <div className="dropdown" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)} onClick={() => setDropdownOpen(!dropdownOpen)}>
               <span className={`nav-link ${dropdownOpen ? "active" : ""}`}>About</span>
               <div className={`dropdown-content ${dropdownOpen ? "show" : ""}`}>
                 <Link href="/ourstory" className="nav-link">Our Story</Link>
@@ -69,25 +100,19 @@ export default function HeaderSection({ productList = [] }) {
               </div>
             </div>
 
-            <div
-              className="product-hover-area"
-              onMouseEnter={() => setProductOpen(true)}
-              onMouseLeave={() => setProductOpen(false)}
-            >
+            <div className="product-hover-area" onMouseEnter={() => setProductOpen(true)} onMouseLeave={() => setProductOpen(false)}>
               <div className="dropdown">
                 <span className={`nav-link ${productOpen ? "active" : ""}`}>Products</span>
               </div>
-
               <div className={`mega-menu ${productOpen ? "show" : ""}`}>
                 <div className="mega-grid">
                   {productList.map((product, index) => (
-                <Link href={`/product/${index}`} key={index}>
-                <div className="product-tile">
-                  <img src={product.product_image || product.imageUrl} alt={product.product_name} />
-                  <p>{product.product_name}</p>
-                </div>
-              </Link>
-              
+                    <Link href={`/product/${index}`} key={index}>
+                      <div className="product-tile">
+                        <img src={product.product_image || product.imageUrl} alt={product.product_name} />
+                        <p>{product.product_name}</p>
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -104,43 +129,34 @@ export default function HeaderSection({ productList = [] }) {
         </div>
 
         {open && (
-  <div className="stockist-modal-overlay fullscreen" onClick={handleOverlayClick}>
-    <div className="stockist-modal fullscreen-modal">
-      <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
-      <h2 className="modal-heading">
-      <image src="/stocker.png" className="stocker-img">
-      Become a Supplier
-              </image>
-      </h2>
-      <p className="modal-subtext">
-        Join the Oneonn Revolution! Fill in the details below to be part of our fizzy journey.
-      </p>
-      <form className="stockist-form">
-        <input type="text" className="animated-input" placeholder="Full Name *" required />
-        <input type="text" className="animated-input" placeholder="Business Name (if any)" />
-        <input type="text" className="animated-input" placeholder="City & State *" required />
-        <input type="email" className="animated-input" placeholder="Email Address *" required />
-        <input type="text" className="animated-input" placeholder="Phone Number *" required />
-        
-        <select className="animated-input inquiry-select" required>
-          <option value="">Do you have distribution experience? *</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        
-        <textarea
-          className="animated-input"
-          rows="4"
-          placeholder="Why do you want to join Oneonn? *"
-          required
-        ></textarea>
-        
-        <button type="submit" className="submit-btn">Apply Now</button>
-      </form>
-    </div>
-  </div>
-)}
-
+          <div className="stockist-modal-overlay fullscreen" onClick={handleOverlayClick}>
+            <div className="stockist-modal fullscreen-modal" onClick={(e) => e.stopPropagation()}>
+              <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
+              <h2 className="modal-heading">
+                <img src="/stocker.png" className="stocker-img" alt="stocker" />
+                Become a Supplier
+              </h2>
+              <p className="modal-subtext">
+                Join the Oneonn Revolution! Fill in the details below to be part of our fizzy journey.
+              </p>
+              <form className="stockist-form" onSubmit={handleSubmit}>
+                <input name="name" placeholder="Full Name *" required value={form.name} onChange={handleChange} className="animated-input" />
+                <input name="business_name" placeholder="Business Name (if any)" value={form.business_name} onChange={handleChange} className="animated-input" />
+                <input name="state" placeholder="State *" required value={form.state} onChange={handleChange} className="animated-input" />
+                <input name="city" placeholder="City *" required value={form.city} onChange={handleChange} className="animated-input" />
+                <input name="email_id" type="email" placeholder="Email Address *" required value={form.email_id} onChange={handleChange} className="animated-input" />
+                <input name="mobile_no" placeholder="Phone Number *" required value={form.mobile_no} onChange={handleChange} className="animated-input" />
+                <select name="existing_distribution_experience" required value={form.existing_distribution_experience} onChange={handleChange} className="animated-input inquiry-select">
+                  <option value="">Do you have distribution experience? *</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                <textarea name="want_to_join" rows="4" placeholder="Why do you want to join Oneonn? *" required value={form.want_to_join} onChange={handleChange} className="animated-input" />
+                <button type="submit" className="submit-btn">Apply Now</button>
+              </form>
+            </div>
+          </div>
+        )}
       </header>
     </section>
   );

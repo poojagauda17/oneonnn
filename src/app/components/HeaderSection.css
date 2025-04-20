@@ -202,7 +202,7 @@ textarea.animated-input {
   padding: 0.6rem 1rem;
   border-radius: 30px;
   cursor: pointer;
-  display: flex;
+  display: flex !important;
   gap: 5px;
 }
 
@@ -493,5 +493,8 @@ textarea.animated-input {
     font-size: 14px;
     margin: 0;
     color: #222 !important;
+  }
+  .hero-container{
+    height: 70px;
   }
 }

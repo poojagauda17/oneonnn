@@ -18,6 +18,29 @@
     position: relative;
     height: 420px;
   }
+  .flavor-carousel-wrapper {
+    overflow-x: hidden;
+    padding: 40px 0;
+  }
+  
+  .flavor-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .flavor-card {
+    position: absolute;
+    transition: all 0.4s ease;
+    margin: 0 20px; /* 👈 ADD THIS LINE for spacing around each card */
+  }
+  
+  .flavor-image {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
   
   .flavor-carousel {
     position: relative;

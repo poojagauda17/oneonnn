@@ -53,7 +53,6 @@
   .hero-slide {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px;
   }
 
   .hero-content h1 {
@@ -61,6 +60,14 @@
   }
 
   .banner-hero-image img {
-    max-width: 260px;
+    max-width: 100%;
+    height: auto;
+  }
+  .banner-hero-image img{
+    margin-top: 0px;
+    margin-top: 0;
+  }
+  .hero-container{
+    height: 70px;
   }
 }

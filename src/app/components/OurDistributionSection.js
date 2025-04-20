@@ -8,11 +8,7 @@ const DistributionDescriptionSection = () => {
   return (
     <section className="distribution-description">
       <div>
-        <img
-          src="/images/leaf.png"
-          alt="Leaf Decoration"
-          className="decorative-leaf"
-        />
+      
 
         <div className="text-content">
           <h2>Our Distribution Centre</h2>

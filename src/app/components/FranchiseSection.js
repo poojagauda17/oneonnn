@@ -1,14 +1,68 @@
 "use client";
-import React from "react";
-import "./FranchiseSection.css";
+
+import React, { useState } from "react";
+import "./FranchiseSection.css"; // Add styles if needed
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 
-export default function Franchise() {
+export default function FranchiseForm({ onSubmitForm }) {
+  const [form, setForm] = useState({
+    name: "",
+    business_name: "",
+    email_id: "",
+    mobile_no: "",
+    city: "",
+    type_of_enquiry: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const newErrors = {};
+    if (!form.name) newErrors.name = "Full name is required";
+    if (!form.email_id || !/\S+@\S+\.\S+/.test(form.email_id)) newErrors.email_id = "Valid email is required";
+    if (!form.mobile_no || form.mobile_no.length < 10) newErrors.mobile_no = "Valid phone number required";
+    if (!form.city) newErrors.city = "City is required";
+    if (!form.type_of_enquiry) newErrors.type_of_enquiry = "Select enquiry type";
+    if (!form.message) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    console.log("Payload:", form);
+    try {
+      const res = await onSubmitForm(form);
+      if (res?.status?.status_code === 0) {
+        alert("Form submitted successfully!");
+        setForm({
+          name: "",
+          business_name: "",
+          email_id: "",
+          mobile_no: "",
+          city: "",
+          type_of_enquiry: "",
+          message: "",
+        });
+        setErrors({});
+      } else {
+        alert("Something went wrong!");
+      }
+    } catch {
+      alert("Something went wrong!");
+    }
+  };
+
   return (
-    <div className="franchise-page">
-       {/* Distribution Section */}
-       <section className="join-distribution-section">
+    <div>
+          <section className="join-distribution-section">
       {/* Top Text Section */}
       <div className="join-intro">
         <h2 className="highlight-heading">
@@ -48,43 +102,32 @@ export default function Franchise() {
         </div>
       </div>
     </section>
-
-      {/* Hero with Background Image & Form */}
-      <section className="franchise-hero">
+    <section className="franchise-hero">
       <section className="franchise-form-wrapper">
-  <div className="form-container">
-    <h2 className="form-heading">Join our partnership</h2>
-    <div className="form-grid">
-      <input type="text" placeholder="Full Name *" />
-      <input type="text" placeholder="Business Name (if any)" />
-      <input type="email" placeholder="Email Address *" />
-      <input type="text" placeholder="Contact Number *" />
-      <input type="text" placeholder="City / Location *" />
-      <select>
-        <option value="">Type of Enquiry *</option>
-        <option value="general">General</option>
-        <option value="distribution">Distribution</option>
-        <option value="collaboration">Collaboration</option>
-      </select>
-      <textarea placeholder="Message *" rows={4}></textarea>
-    </div>
-    <button className="send-btn">Send</button>
-  </div>
-</section>
-
-
-        {/* <div className="hero-text">
-          <h2>Refresh Your Taste Buds With Our Tasty And Healthy Drinks</h2>
-          <p>
-            Hana, Non-alcoholic healthy drinks with a delicious range of cold drinks
-            featuring Ginger special, Fresh Nimbu, Fizz Kokum, and Grape Pulp. But our
-            expertise doesn’t stop there, we are continually innovating tastes that sprinkle
-            your body.
-          </p>
-        </div> */}
+        <div className="form-container">
+          <h2 className="form-heading">Join our partnership</h2>
+          <form className="form-grid" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Full Name *" name="name" value={form.name} onChange={handleChange} />
+            <input type="text" placeholder="Business Name (if any)" name="business_name" value={form.business_name} onChange={handleChange} />
+            <input type="email" placeholder="Email Address *" name="email_id" value={form.email_id} onChange={handleChange} />
+            <input type="text" placeholder="Contact Number *" name="mobile_no" value={form.mobile_no} onChange={handleChange} />
+            <input type="text" placeholder="City / Location *" name="city" value={form.city} onChange={handleChange} />
+            <select name="type_of_enquiry" value={form.type_of_enquiry} onChange={handleChange}>
+              <option value="">Type of Enquiry *</option>
+              <option value="general">General</option>
+              <option value="distribution">Distribution</option>
+              <option value="collaboration">Collaboration</option>
+            </select>
+            <textarea name="message" placeholder="Message *" rows={4} value={form.message} onChange={handleChange}></textarea>
+            {Object.values(errors).map((err, i) => (
+              <p key={i} style={{ color: "red", fontSize: "14px", marginTop: "-10px" }}>{err}</p>
+            ))}
+            <button className="send-btn" type="submit">Send</button>
+          </form>
+        </div>
       </section>
-
-     
+    </section>
     </div>
+  
   );
 }

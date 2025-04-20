@@ -5,11 +5,11 @@ import HeaderSection from "../components/HeaderSection";
 import FooterSection from "../components/FooterSection";
 import FranchiseSection from "../components/FranchiseSection";
 import {
-  getAllProductList,
+  getAllProductList, addEnquiryForm
 } from "../utils/employee"
 
 const Franchise = () => {
-      const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState([]);
       useEffect(() => {
         const fetchData = async () => {
           try {
@@ -30,7 +30,7 @@ const Franchise = () => {
     <div>
       <HeaderSection productList={productList} />
 
-      <FranchiseSection />
+      <FranchiseSection onSubmitForm={addEnquiryForm}/>
       <FooterSection />
     </div>
   );

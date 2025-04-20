@@ -112,4 +112,11 @@
   .product-banner {
     padding: 20px;
   }
+  .product-details{
+    padding-top: 70px;
+  }
+  .product-details{
+    gap: 20px;
+  }
 }
+

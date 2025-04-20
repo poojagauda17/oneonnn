@@ -1,40 +1,38 @@
 "use client";
-import React from "react";
-import { useState, useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
 import HeaderSection from "../components/HeaderSection";
-import ContactForm from "../components/ContactForm";
 import FooterSection from "../components/FooterSection";
-import {
-  getAllProductList,
-} from "../utils/employee";
+import ContactForm from "../components/ContactForm";
+import { getAllProductList, postContactUsForm } from "../utils/employee";
 
+export default function ContactPage() {
+  const [productList, setProductList] = useState([]);
 
-const page = () => {
-    const [productList, setProductList] = useState([]);
-      useEffect(() => {
-        const fetchData = async () => {
-          try {
-                    const products = await getAllProductList();
-            
-    
-    
-            setProductList(products?.payload || []);
-    
-          } catch (error) {
-            console.error("API fetch error:", error);
-          }
-        };
-    
-        fetchData();
-      }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getAllProductList();
+      setProductList(response?.payload || []);
+    };
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (formData) => {
+    try {
+      const result = await postContactUsForm(formData);
+      console.log("✅ Success Response:", result);
+      alert("Your message has been sent!");
+    } catch (error) {
+      console.error("❌ API Error:", error?.response?.data || error.message);
+      alert("Something went wrong!");
+    }
+  };
+
   return (
-    <div>
+    <>
       <HeaderSection productList={productList} />
-
-      <ContactForm className="mt-2" />
+      <ContactForm onSubmit={handleSubmit} />
       <FooterSection />
-    </div>
+    </>
   );
-};
-
-export default page;
+}
