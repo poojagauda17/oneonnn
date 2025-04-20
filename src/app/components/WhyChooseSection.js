@@ -5,22 +5,22 @@ import "./WhyChooseSection.css";
 
 const data = [
   {
-    title: "Exceptional Quality and Taste",
+    title: "Locally Crafted, Proudly Pune",
     content:
       "Discover unparalleled quality with our beverages, meticulously crafted from premium natural ingredients like real fruit pulps and pure spring water for a refreshing and delightful experience.",
   },
   {
-    title: "Commitment to Health",
+    title: "Bursting with Natural Flavors",
     content:
       "We prioritize wellness by avoiding harmful additives and offering low-sugar or sugar-free options to support a healthy lifestyle.",
   },
   {
-    title: "Innovative and Diverse Product Range",
+    title: "Affordable, Accessible, Awesome",
     content:
       "From classic flavors to bold new blends, our ever-evolving lineup ensures there's a perfect drink for every taste and occasion.",
   },
   {
-    title: "Unparalleled Customer Service",
+    title: "Six Signature Flavors to Fall in Love With",
     content:
       "Our team is dedicated to exceptional support, timely delivery, and customer satisfaction across all channels.",
   },
