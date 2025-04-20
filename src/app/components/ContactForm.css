@@ -126,4 +126,16 @@
     width: 100%;
     text-align: center;
   }
+  .contact-left{
+    min-width: 100%;
+  }
+  .contact-form{
+    min-width: 100%;
+  }
+  .contact-section{
+    padding: 80px 20px 70px;
+  }
+  .contact-container{
+    gap: 30px;
+  }
 }

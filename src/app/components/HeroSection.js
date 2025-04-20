@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./HeaderSection.css";
+import "./HeroSection.css";
 
 export default function HeroBanner({ bannerList = [] }) {
   console.log("Received bannerList in HeaderSection:", bannerList);
@@ -30,7 +30,7 @@ export default function HeroBanner({ bannerList = [] }) {
                 {slide.title && <h4>{slide.title}</h4>}
                 {slide.highlight && <h1>{slide.highlight}</h1>}
               </div>
-              <div className="hero-image">
+              <div className="banner-hero-image">
                 <img
                   src={slide.image || slide.imageUrl}
                   alt={slide.title || `Banner ${index + 1}`}

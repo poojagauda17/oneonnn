@@ -4,7 +4,9 @@
   justify-content: space-between;
   padding: 70px 40px 7px 40px ;
   border-radius: 30px;
-  background: linear-gradient(90deg, #0f9d58, #21c57c);
+  /* background: linear-gradient(90deg, #0f9d58, #21c57c); */
+  background: linear-gradient(90deg, #028f27 0%, #10c951 100%);
+
   color: white;
   font-family: 'Poppins', sans-serif;
   flex-wrap: wrap;

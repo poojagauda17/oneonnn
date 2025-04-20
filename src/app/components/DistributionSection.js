@@ -2,6 +2,8 @@
 
 import React from "react";
 import "./DistributionSection.css";
+import Link from "next/link";
+
 
 
 export default function DistributionSection() {
@@ -26,7 +28,9 @@ export default function DistributionSection() {
             production lines and your doorstep, ensuring a seamless flow from
             order to delivery.
           </p>
-          <button className="distribution-btn">Read More</button>
+          <button className="distribution-btn">
+            <Link href="/distribution">Read More</Link>
+          </button>
         </div>
       </div>
     

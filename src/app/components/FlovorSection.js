@@ -10,44 +10,54 @@ const products = [
   { image: "/Flovors/3.jpg" },
   { image: "/Flovors/4.jpg" },
   { image: "/Flovors/5.jpg" },
+  { image: "/Flovors/6.jpg" },
+
 ];
 
 export default function FlovorCarousel() {
-  const [centerIndex, setCenterIndex] = useState(2); // 3rd item is center initially
+  const [centerIndex, setCenterIndex] = useState(2); // Start from center
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCenterIndex((prev) => (prev + 1) % products.length);
-    }, 3000); // change every 3 seconds
-
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  // To handle circular reference
-  const getItem = (offset) => {
-    const len = products.length;
-    return products[(centerIndex + offset + len) % len];
+  const getOffset = (i) => {
+    const offset = i - centerIndex;
+    const half = Math.floor(products.length / 2);
+    if (offset > half) return offset - products.length;
+    if (offset < -half) return offset + products.length;
+    return offset;
   };
 
   return (
-    <div className="coverflow-wrapper">
-      <div className="coverflow">
-        <div className="card far-left">
-          <Image src={getItem(-2).image} alt="flavor" width={300} height={400} />
-        </div>
-        <div className="card left">
-          <Image src={getItem(-1).image} alt="flavor" width={300} height={400} />
-        </div>
-        <div className="card center">
-          <Image src={getItem(0).image} alt="flavor" width={300} height={400} />
-        </div>
-        <div className="card right">
-          <Image src={getItem(1).image} alt="flavor" width={300} height={400} />
-        </div>
-        <div className="card far-right">
-          <Image src={getItem(2).image} alt="flavor" width={300} height={400} />
-        </div>
-      </div>
+   <div className="flavor-carousel-wrapper">
+     <div className="flavor-carousel">
+      {products.map((product, i) => {
+        const offset = getOffset(i);
+        return (
+          <div
+            key={i}
+            className="flavor-card"
+            style={{
+              transform: `translateX(${offset * 220}px) scale(${1 - Math.abs(offset) * 0.2})`,
+              zIndex: 10 - Math.abs(offset),
+              opacity: Math.abs(offset) > 2 ? 0 : 1,
+            }}
+          >
+            <Image
+              src={product.image}
+              alt="flavor"
+              width={300}
+              height={400}
+              className="flavor-image"
+            />
+          </div>
+        );
+      })}
     </div>
+   </div>
   );
 }

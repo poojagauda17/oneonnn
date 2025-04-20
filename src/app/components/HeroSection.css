@@ -6,16 +6,19 @@
   
   
 }
-
+.banner-hero-image img{
+  height: 700px;
+  width: 100%;
+  margin-top: -150px;
+}
+.hero-banner-img{
+  color: black;
+}
 .hero-slide {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 10%;
-  min-height: 90vh;
+  padding: 0px 0%;
   color: white;
+  width: 100%;
   font-family: 'Poppins', sans-serif;
-  gap: 40px;
 }
 
 .hero-content h4 {
@@ -29,11 +32,6 @@
   font-weight: 900;
   font-family: 'Bebas Neue', sans-serif;
   line-height: 1.1;
-}
-
-.hero-image img {
-  max-width: 400px;
-  height: auto;
 }
 
 .swiper-pagination-bullets {
@@ -62,7 +60,7 @@
     font-size: 32px;
   }
 
-  .hero-image img {
+  .banner-hero-image img {
     max-width: 260px;
   }
 }

@@ -8,13 +8,13 @@
   
 }
 .hero-container{
-  height: 96.19px
+  height: 79.19px
 }
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 25px 95px;
+  margin: 17px 95px;
   
 }
 
@@ -254,7 +254,7 @@ textarea.animated-input {
   left: 0;                       /* align to screen edge */
   width: 100vw;                  /* full width */
   background-color: #1f1f1f;
-  padding: 30px 60px;
+  padding: 10px 60px;
   z-index: 9999;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   display: none;
@@ -375,7 +375,7 @@ textarea.animated-input {
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
-    height: 300px;
+    gap: 7px
   }
 
   .product-tile {
@@ -395,7 +395,7 @@ textarea.animated-input {
     font-size: 16px;
     font-weight: 600;
     text-transform: none;
-    color: white;
+    color: #111;
     margin: 0;
     font-size: 14px;
   }
@@ -484,6 +484,6 @@ textarea.animated-input {
   .product-tile p {
     font-size: 14px;
     margin: 0;
-    color: #222;
+    color: #222 !important;
   }
 }
