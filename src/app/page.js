@@ -57,12 +57,12 @@ const HeroSection = () => {
       <AboutSection />
       <Flovors/>
       <AllFlovorsSection/>
-      <ProductSection productList={productList} />
+      {/* <ProductSection productList={productList} /> */}
       <CalltoAction />
       <DistributionSection />
       <Classic />
-      <BlogSection blogList={blogList} />
-      <TestimonialCarousel />
+      {/* <BlogSection blogList={blogList} /> */}
+      {/* <TestimonialCarousel /> */}
       <FooterSection />
     </div>
   );
