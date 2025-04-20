@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./HeaderSection.css";
+import Image from "next/image";
+
+
 
 export default function HeaderSection({ productList = [] }) {
   const pathname = usePathname();
@@ -36,7 +39,12 @@ export default function HeaderSection({ productList = [] }) {
     <section className="hero-container">
       <header className="navbar">
         <div className="header-container">
-          <div className="logo">ONEONNN</div>
+          <div className="logo">
+            <Link href="/">
+          <img src="/oneonn-logo.png" alt="logo" className="header-logo" />
+            </Link>
+
+          </div>
 
           <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="bar"></span>
@@ -89,7 +97,8 @@ export default function HeaderSection({ productList = [] }) {
             <Link href="/contact" className={isActive("/contact") ? "nav-link active" : "nav-link"}>Contact Us</Link>
 
             <button className="stockist-btn mobile-only" onClick={() => setOpen(true)}>
-              Become a Super Stocker
+              <img src="/stocker.png" className="stocker-img" />
+              Become a Supplier
             </button>
           </nav>
         </div>
@@ -98,7 +107,11 @@ export default function HeaderSection({ productList = [] }) {
   <div className="stockist-modal-overlay fullscreen" onClick={handleOverlayClick}>
     <div className="stockist-modal fullscreen-modal">
       <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
-      <h2 className="modal-heading">Become a Super Stockist</h2>
+      <h2 className="modal-heading">
+      <image src="/stocker.png" className="stocker-img">
+      Become a Supplier
+              </image>
+      </h2>
       <p className="modal-subtext">
         Join the Oneonn Revolution! Fill in the details below to be part of our fizzy journey.
       </p>

@@ -9,13 +9,16 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import "./FooterSection.css";
+import Link from "next/link";
+
 
 export default function FooterSection() {
   return (
     <footer className="footer-section">
       <div className="footer-container">
         <div className="footer-left">
-          <img src="/logo.png" alt="logo" className="footer-logo" />
+       <Link href="/">
+       <img src="/oneonn-logo.png" alt="logo" className="footer-logo" /></Link>
         </div>
 
         <div className="footer-links">
