@@ -4,111 +4,74 @@ import React from "react";
 import { useParams } from "next/navigation";
 import "./ProductInSection.css";
 
-const productData = [
-  {
-    name: "Mango Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#c9850a",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
-    name: "Guava Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#535611",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
-    name: "Kokum Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#832a30",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
-    name: "Lichi Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#7e292c",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
+// fallback colors array (rotate if no bgColor from API)
+const bgColors = ["#c9850a", "#535611","#832a30", "#820c0c", "#cc6600", "#007b5e"];
 
-];
-
-export default function ProductDetails() {
+export default function ProductInSection({ productList = [] }) {
   const params = useParams();
-  const id = parseInt(params?.id || "0"); // get id from URL
-  const product = productData[id] || productData[0];
+  const id = parseInt(params?.id || "0");
+  const product = productList[id] || productList[0];
+  console.log("✅ Products:", product);
+
+  if (!product) return <p>Product not found.</p>;
+
+  const bgColor = product.bgColor || bgColors[id % bgColors.length];
+
+  const nutritionData = [
+    { label: "Acidity as Citric Acid", value: product.acidity_as_citric_acid },
+    { label: "Caffeine", value: product.caffeine },
+    { label: "Calcium", value: product.calcium },
+    { label: "Carbohydrates", value: product.carbohydrates },
+    { label: "Citric Acid", value: product.citric_acid },
+    { label: "Energy", value: product.energy },
+    { label: "Fat", value: product.fat },
+    { label: "Protein", value: product.protein },
+    { label: "Sugar", value: product.sugar },
+    { label: "Sodium", value: product.sodium },
+    { label: "Weight", value: product.weight },
+    { label: "Vitamin B6", value: product.vitamin_b6 },
+    { label: "Vitamin B12", value: product.vitamin_b12 },
+    { label: "Vitamin D", value: product.vitamin_d },
+    { label: "Trans Fat", value: product.trans_fat },
+    { label: "Total Fat", value: product.total_fat },
+    { label: "Inositol", value: product.inositol },
+    { label: "Taurine", value: product.taurine },
+    { label: "Niacin", value: product.niacin },
+  ];
 
   return (
     <div className="product-details">
-      <div
-        className="product-banner"
-        style={{ backgroundColor: product.bgColor }}
-      >
-        <img src={product.image} alt={product.name} />
+      <div className="product-banner">
+        <img src={product.product_image} alt={product.product_name} />
       </div>
+
       <div className="product-content">
         <h1>
-          <div style={{ color: product.bgColor }}>{product.name}</div>
+          <div style={{ color: bgColor }}>{product.product_name}</div>
         </h1>
         <p>
           <strong>Ingredients:</strong> {product.ingredients}
         </p>
 
         <table className="nutrition-table">
-          <thead >
-            <tr >
-              <th style={{ backgroundColor: product.bgColor }}>Nutritional Information per 200ml (*Approximate Value*)</th>
-              <th style={{ backgroundColor: product.bgColor }}>Per 200ml</th>
+          <thead>
+            <tr>
+              <th style={{ backgroundColor: bgColor, color: "#fff" }}>
+                Nutritional Information per 200ml
+              </th>
+              <th style={{ backgroundColor: bgColor, color: "#fff" }}>Per 200ml</th>
             </tr>
           </thead>
           <tbody>
-            {product.nutrition.map((item, idx) => (
-              <tr key={idx}>
-                <td>
-                  <p className="nutrition-table-label">{item.label}</p>
-                </td>
-                <td>{item.value}</td>
-              </tr>
-            ))}
+            {nutritionData.map(
+              (item, idx) =>
+                item.value && (
+                  <tr key={idx}>
+                    <td>{item.label}</td>
+                    <td>{item.value}</td>
+                  </tr>
+                )
+            )}
           </tbody>
         </table>
       </div>

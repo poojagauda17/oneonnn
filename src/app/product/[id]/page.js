@@ -33,7 +33,7 @@ const HeroSection = () => {
   return (
     <div>
       <HeaderSection productList={productList} />
-      <ProductInSection />
+      <ProductInSection productList={productList} />
       <FooterSection />
     </div>
   );
