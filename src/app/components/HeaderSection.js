@@ -95,33 +95,39 @@ export default function HeaderSection({ productList = [] }) {
         </div>
 
         {open && (
-          <div className="stockist-modal-overlay fullscreen" onClick={handleOverlayClick}>
-            <div className="stockist-modal fullscreen-modal">
-              <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
-              <h2>Contact Us</h2>
-              <form className="stockist-form">
-                <div className="row">
-                  <input type="text" className="animated-input" placeholder="First name*" required />
-                  <input type="text" className="animated-input" placeholder="Last name*" required />
-                </div>
-                <div className="row">
-                  <input type="email" className="animated-input" placeholder="Email*" required />
-                  <input type="text" className="animated-input" placeholder="Company name*" required />
-                </div>
-                <input type="text" className="animated-input" placeholder="Phone number" />
-                <select className="animated-input inquiry-select" required>
-                  <option value="">Please Select</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="distributor">Bottler & Distributor Inquiry</option>
-                </select>
-                <label className="checkbox">
-                  <input type="checkbox" /> I agree to receive marketing communications
-                </label>
-                <button type="submit" className="submit-btn">Contact Us</button>
-              </form>
-            </div>
-          </div>
-        )}
+  <div className="stockist-modal-overlay fullscreen" onClick={handleOverlayClick}>
+    <div className="stockist-modal fullscreen-modal">
+      <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
+      <h2 className="modal-heading">Become a Super Stockist</h2>
+      <p className="modal-subtext">
+        Join the Oneonn Revolution! Fill in the details below to be part of our fizzy journey.
+      </p>
+      <form className="stockist-form">
+        <input type="text" className="animated-input" placeholder="Full Name *" required />
+        <input type="text" className="animated-input" placeholder="Business Name (if any)" />
+        <input type="text" className="animated-input" placeholder="City & State *" required />
+        <input type="email" className="animated-input" placeholder="Email Address *" required />
+        <input type="text" className="animated-input" placeholder="Phone Number *" required />
+        
+        <select className="animated-input inquiry-select" required>
+          <option value="">Do you have distribution experience? *</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        
+        <textarea
+          className="animated-input"
+          rows="4"
+          placeholder="Why do you want to join Oneonn? *"
+          required
+        ></textarea>
+        
+        <button type="submit" className="submit-btn">Apply Now</button>
+      </form>
+    </div>
+  </div>
+)}
+
       </header>
     </section>
   );

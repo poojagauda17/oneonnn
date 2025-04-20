@@ -91,7 +91,6 @@
 
 .nutrition-table thead th {
   color: #fff;
-  background-color: #820c0c; /* fallback, overridden by inline */
   font-weight: 600;
 }
 

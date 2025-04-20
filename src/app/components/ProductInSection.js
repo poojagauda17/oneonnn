@@ -6,57 +6,9 @@ import "./ProductInSection.css";
 
 const productData = [
   {
-    name: "Kokum Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
-    name: "Jeera Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
-    name: "Buttermilk Juice",
-    image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
-    ingredients:
-      "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
-    nutrition: [
-      { label: "Total Solids", value: "16.5%" },
-      { label: "Acidity as Citric Acid", value: "1.2%" },
-      { label: "Sugars as Sucrose", value: "12.8%" },
-      { label: "Energy", value: "52.0" },
-      { label: "Carbohydrates", value: "11.0%" },
-      { label: "Protein", value: "0.5%" },
-      { label: "Fat", value: "0.5%" },
-    ],
-  },
-  {
     name: "Mango Juice",
     image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
+    bgColor: "#c9850a",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
     nutrition: [
@@ -70,9 +22,9 @@ const productData = [
     ],
   },
   {
-    name: "apple Juice",
+    name: "Guava Juice",
     image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
+    bgColor: "#535611",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
     nutrition: [
@@ -86,9 +38,9 @@ const productData = [
     ],
   },
   {
-    name: "Bananana Juice",
+    name: "Kokum Juice",
     image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
+    bgColor: "#832a30",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
     nutrition: [
@@ -104,7 +56,7 @@ const productData = [
   {
     name: "Lichi Juice",
     image: "/images/LKMG.jpg",
-    bgColor: "#820c0c",
+    bgColor: "#7e292c",
     ingredients:
       "Purified Water, Sugar, Natural Kokum, Permitted Class || Preservative",
     nutrition: [
@@ -117,7 +69,7 @@ const productData = [
       { label: "Fat", value: "0.5%" },
     ],
   },
-  // Add more product objects as needed
+
 ];
 
 export default function ProductDetails() {
@@ -142,10 +94,10 @@ export default function ProductDetails() {
         </p>
 
         <table className="nutrition-table">
-          <thead style={{ backgroundColor: product.bgColor }}>
-            <tr>
-              <th>Nutritional Information per 200ml (*Approximate Value*)</th>
-              <th>Per 200ml</th>
+          <thead >
+            <tr >
+              <th style={{ backgroundColor: product.bgColor }}>Nutritional Information per 200ml (*Approximate Value*)</th>
+              <th style={{ backgroundColor: product.bgColor }}>Per 200ml</th>
             </tr>
           </thead>
           <tbody>
