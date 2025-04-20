@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import "./AboutSection.css"; // Make sure this path matches your folder structure
+import Link from "next/link";
+import "./AboutSection.css";
 
 export default function AboutSection() {
   return (
@@ -27,7 +28,11 @@ export default function AboutSection() {
           natural ingredients like real fruit pulps and pure spring water for a refreshing and
           delightful experience.
         </p>
-        <button className="about-button">Read More</button>
+        <button className="about-button">
+          <Link href="about">
+          Read More
+          </Link>
+        </button>
       </div>
    </div>
     </section>

@@ -1,0 +1,134 @@
+.health-blend-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 70px 20px;
+    gap: 10rem;
+     max-width: 1200;
+    margin: 0 auto;
+  }
+  
+  .text-side {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+  }
+  
+  .text-side h2 {
+    font-size: 2rem;
+    font-family: Bebas Neue, sans-serif;
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-side p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  .text-side h4 {
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .image-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+  }
+  
+  .image-side img {
+    max-width: 100%;
+    height: auto;
+  }
+  .vision-mission-section {
+    background: url("/images/bg.jpg") center center no-repeat;
+    background-color: #6d2971;
+    background-size: cover;
+  
+  }
+  
+  .vision-happy-section{
+       color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+      max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px
+  }
+  
+  .text-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .text-column h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, serif;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+  
+  .text-column h3 {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .text-column p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--whitelight) !important;
+  }
+  
+  .image-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-column img {
+    max-width: 39%;
+    height: auto;
+    position: absolute;
+      right: 0px;
+      top: -103px;
+  }
+  @media screen and (max-width: 768px) {
+  
+    .vision-mission-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+  
+    .text-column h2 {
+      font-size: 2rem;
+    }
+  
+    .text-column h3 {
+      font-size: 1.2rem;
+    }
+  
+    .image-column img {
+      max-width: 80%;
+    }
+    .health-blend-section{
+      gap: 2rem;
+    }
+  }
+  
+  

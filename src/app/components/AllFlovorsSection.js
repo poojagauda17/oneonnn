@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import "./AllFlovorsSection.css";
+import Link from "next/link";
+
 
 export default function HeroOrangeSection() {
   return (
@@ -14,7 +16,9 @@ export default function HeroOrangeSection() {
             premium natural ingredients like real fruit pulps and pure spring water
             for a refreshing and delightful experience.
           </p>
-          <button className="hero-btn">Read More</button>
+          <button className="hero-btn">
+            <Link href="ourstory">Read More</Link>
+          </button>
         </div>
         <div className="hero-image-box">
           <Image
