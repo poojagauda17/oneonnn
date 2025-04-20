@@ -5,67 +5,107 @@
   font-family: "Poppins", sans-serif;
   margin-top: 70px;
 }
+.franchise-section {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+}
 
-.franchise-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.franchise-card svg{
-  width: 40px;
-  margin: auto;
-}
-.franchise-card {
+.franchise-joined-card {
+  display: flex;
   background: #fff;
-  padding: 40px 30px;
   border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  flex-wrap: wrap;
+  margin: 0px 30px;
 }
 
-.franchise-card:hover {
-  transform: translateY(-8px);
+.card-column {
+  flex: 1;
+  padding: 3rem 2rem;
+  border-right: 1px solid #eee;
+}
+
+.card-column:last-child {
+  border-right: none;
+}
+
+.card-column.left {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.card-column.right {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .franchise-icon {
-  font-size: 30px;
-  color: #70c300;
-  margin-bottom: 16px;
-}
-
-.franchise-card h3 {
-  margin-top: 5px;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.franchise-card p {
-  font-size: 14px;
-  color: #555;
+  font-size: 1.8rem;
+  color: #40c878;
+  margin-bottom: 1rem;
+  margin: auto;
   margin-bottom: 20px;
-  line-height: 1.6;
+  height: 60px;
+  width: 45px;
+}
+
+.card-column h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #111;
+}
+
+.card-column p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.2rem;
 }
 
 .franchise-link {
-  color: #8e44ad;
   font-weight: 600;
-  font-size: 13px;
-  text-decoration: none;
-  display: inline-block;
+  font-size: 0.95rem;
+  color: #722f8b;
   text-decoration: underline;
+  border-bottom: 2px solid transparent;
 }
 
 .franchise-link:hover {
-  text-decoration: underline;
+  border-color: #722f8b;
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .franchise-container {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .franchise-joined-card {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .card-column {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .card-column:last-child {
+    border-bottom: none;
+  }
+
+  .card-column.left,
+  .card-column.right {
+    border-radius: 0;
+  }
+
+  .card-column:first-child {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .card-column:last-child {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 }

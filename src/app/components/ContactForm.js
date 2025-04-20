@@ -44,7 +44,6 @@ export default function ContactSection() {
               name="Full Name"
               placeholder="Full Name *"
               required
-              value={form.name}
               onChange={handleChange}
             />
             <input
@@ -52,7 +51,6 @@ export default function ContactSection() {
               name="Email Address"
               placeholder="Email Address *"
               required
-              value={form.email}
               onChange={handleChange}
             />
           </div>

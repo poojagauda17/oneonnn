@@ -3,12 +3,11 @@
 import "./CalltoAction.css";
 import { FaMagic, FaBullseye, FaStar } from "react-icons/fa";
 
-
 export default function FranchiseSection() {
   return (
     <section className="franchise-section">
-      <div className="franchise-container">
-        <div className="franchise-card">
+      <div className="franchise-joined-card">
+        <div className="card-column left">
           <FaMagic className="franchise-icon" />
           <h3>Why choose us</h3>
           <p>
@@ -18,7 +17,7 @@ export default function FranchiseSection() {
           <a href="/ourstory" className="franchise-link">KNOW MORE</a>
         </div>
 
-        <div className="franchise-card">
+        <div className="card-column center">
           <FaBullseye className="franchise-icon" />
           <h3>Distribution Centre</h3>
           <p>
@@ -28,7 +27,7 @@ export default function FranchiseSection() {
           <a href="/distribution" className="franchise-link">GET IN TOUCH</a>
         </div>
 
-        <div className="franchise-card">
+        <div className="card-column right">
           <FaStar className="franchise-icon" />
           <h3>Need Franchise</h3>
           <p>
