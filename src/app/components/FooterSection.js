@@ -24,7 +24,7 @@ export default function FooterSection() {
         <div className="footer-links">
           <ul>
             <li>
-              <a href="#">About</a>
+              <a href="/about">About</a>
             </li>
             <li>
               <a href="#">Our Brands</a>
@@ -38,10 +38,10 @@ export default function FooterSection() {
               <a href="#">Services</a>
             </li>
             <li>
-              <a href="#">Our Blog</a>
+              <a href="/blog">Our Blog</a>
             </li>
             <li>
-              <a href="#">Get in Touch</a>
+              <a href="/contactus">Get in Touch</a>
             </li>
           </ul>
         </div>
