@@ -152,7 +152,7 @@
 }
 
 .animated-input:focus {
-  border-color: #0a50b3;
+  border-color: var(--primary);
   outline: none;
   box-shadow: 0 0 5px rgba(10, 80, 179, 0.3);
 }
