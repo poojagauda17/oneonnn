@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import "./ProductInSection.css";
 
 // fallback colors array (rotate if no bgColor from API)
-const bgColors = ["#fe792e", "#347205","#ff9203", "#c3db03", "#cc6600", "#007b5e"];
+const bgColors = ["#fe792e", "#347205","#ff9203", "#c3db03", "#210a4e", "#007b5e"];
 
 export default function ProductInSection({ productList = [] }) {
   const params = useParams();

@@ -107,21 +107,21 @@ export default function FranchiseForm({ onSubmitForm }) {
         <div className="form-container">
           <h2 className="form-heading">Join our partnership</h2>
           <form className="form-grid" onSubmit={handleSubmit}>
-            <input type="text" placeholder="Full Name *" name="name" value={form.name} onChange={handleChange} />
-            <input type="text" placeholder="Business Name (if any)" name="business_name" value={form.business_name} onChange={handleChange} />
-            <input type="email" placeholder="Email Address *" name="email_id" value={form.email_id} onChange={handleChange} />
-            <input type="text" placeholder="Contact Number *" name="mobile_no" value={form.mobile_no} onChange={handleChange} />
-            <input type="text" placeholder="City / Location *" name="city" value={form.city} onChange={handleChange} />
-            <select name="type_of_enquiry" value={form.type_of_enquiry} onChange={handleChange}>
+            <input type="text" placeholder="Full Name *" name="name" value={form.name} required onChange={handleChange} />
+            <input type="text" placeholder="Business Name (if any)" name="business_name" required value={form.business_name} onChange={handleChange} />
+            <input type="email" placeholder="Email Address *" name="email_id" required value={form.email_id} onChange={handleChange} />
+            <input type="text" placeholder="Contact Number *" name="mobile_no" required value={form.mobile_no} onChange={handleChange} />
+            <input type="text" placeholder="City / Location *" name="city" required value={form.city} onChange={handleChange} />
+            <select name="type_of_enquiry" value={form.type_of_enquiry} required onChange={handleChange}>
               <option value="">Type of Enquiry *</option>
               <option value="general">General</option>
               <option value="distribution">Distribution</option>
               <option value="collaboration">Collaboration</option>
             </select>
-            <textarea name="message" placeholder="Message *" rows={4} value={form.message} onChange={handleChange}></textarea>
-            {Object.values(errors).map((err, i) => (
+            <textarea name="message" placeholder="Message *" required rows={4} value={form.message} onChange={handleChange}></textarea>
+            {/* {Object.values(errors).map((err, i) => (
               <p key={i} style={{ color: "red", fontSize: "14px", marginTop: "-10px" }}>{err}</p>
-            ))}
+            ))} */}
             <button className="send-btn" type="submit">Send</button>
           </form>
         </div>

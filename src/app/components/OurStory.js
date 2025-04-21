@@ -11,20 +11,15 @@ const OurStory = () => {
         <div className="text-side">
           <h2>The Perfect Blend of Health and Taste</h2>
           <p>
-            Our Company Swadeshi Food and Beverages – Hana Drinks, established
-            in 2014 an innovative and dynamic company dedicated to Non-Alcoholic
-            Healthy Drinks with a Delicious range of cold drinks and refreshing
-            healthy drinks made with the finest natural ingredients. We’re
-            passionate about providing healthy alternatives in the beverage
-            market, without compromising on taste or quality.
+          Founded in 2018 with a love for fizzy fun and local pride, Oneonn started as a humble venture and quickly became a favorite in the neighborhood. With quality ingredients, irresistible taste, and vibrant branding, we’re on a mission to make every drink a celebration.
           </p>
-          <p>
+          {/* <p>
             At Natural Drinks, we believe in using real fruits pulps, pure
             spring water, and minimal processing to create beverages that are
             good for you and good for the planet. Our commitment to
             sustainability extends to our sourcing practices, ensuring we
             partner with responsible farmers and utilize eco-friendly.
-          </p>
+          </p> */}
 
           <h4>Try All Our Flavours</h4>
           <p>
