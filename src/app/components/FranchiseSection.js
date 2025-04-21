@@ -110,7 +110,7 @@ export default function FranchiseForm({ onSubmitForm }) {
             <input type="text" placeholder="Full Name *" name="name" value={form.name} required onChange={handleChange} />
             <input type="text" placeholder="Business Name (if any)" name="business_name" required value={form.business_name} onChange={handleChange} />
             <input type="email" placeholder="Email Address *" name="email_id" required value={form.email_id} onChange={handleChange} />
-            <input type="text" placeholder="Contact Number *" name="mobile_no" required value={form.mobile_no} onChange={handleChange} />
+            <input type="number" placeholder="Contact Number *" name="mobile_no" required value={form.mobile_no} onChange={handleChange} />
             <input type="text" placeholder="City / Location *" name="city" required value={form.city} onChange={handleChange} />
             <select name="type_of_enquiry" value={form.type_of_enquiry} required onChange={handleChange}>
               <option value="">Type of Enquiry *</option>

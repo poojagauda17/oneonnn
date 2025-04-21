@@ -66,7 +66,7 @@ export default function ContactForm({ onSubmit }) {
           </div>
           <div className="form-row">
             <input
-              type="text"
+              type="number"
               name="contact"
               placeholder="Contact Number *"
               required

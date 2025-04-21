@@ -167,7 +167,7 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
                 <input name="state" placeholder="State *" required value={form.state} onChange={handleChange} className="animated-input" />
                 <input name="city" placeholder="City *" required value={form.city} onChange={handleChange} className="animated-input" />
                 <input name="email_id" type="email" placeholder="Email Address *" required value={form.email_id} onChange={handleChange} className="animated-input" />
-                <input name="mobile_no" placeholder="Phone Number *" required value={form.mobile_no} onChange={handleChange} className="animated-input" />
+                <input name="mobile_no" type="number" placeholder="Phone Number *" required value={form.mobile_no} onChange={handleChange} className="animated-input" />
                 <select name="existing_distribution_experience" required value={form.existing_distribution_experience} onChange={handleChange} className="animated-input inquiry-select">
                   <option value="">Do you have distribution experience? *</option>
                   <option value="yes">Yes</option>
