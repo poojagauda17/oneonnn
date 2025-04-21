@@ -38,26 +38,48 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // ✅ Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email_id.trim())) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+  
+    // ✅ Mobile number validation
+    if (!/^\d{10}$/.test(form.mobile_no)) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+  
     try {
-      const res = await onSupplierSubmit(form);
-      console.log("✅ Submitted:", res);
-      alert("Application submitted successfully!");
-      setForm({
-        name: "",
-        business_name: "",
-        state: "",
-        city: "",
-        email_id: "",
-        mobile_no: "",
-        existing_distribution_experience: "",
-        want_to_join: "",
-      });
-      setOpen(false);
+      const res = await onSupplierSubmit(form); // ✅ This hits the API
+  
+      // ✅ Show success if API responds with status_code 0 or expected message
+      if (res?.status?.status_code === 0 || res?.payload?.message?.includes("sent")) {
+        alert("Application submitted successfully!");
+        setOpen(false);
+        setForm({
+          name: "",
+          business_name: "",
+          state: "",
+          city: "",
+          email_id: "",
+          mobile_no: "",
+          existing_distribution_experience: "",
+          want_to_join: "",
+        });
+      } else {
+        console.error("❌ Unexpected Response:", res);
+        alert("Something went wrong on the server.");
+      }
     } catch (err) {
-      console.error("❌ Submission failed:", err);
+      console.error("❌ Catch Error:", err);
       alert("Something went wrong. Please try again.");
     }
   };
+  
+  
 
   useEffect(() => {
     const handleClickOutside = (e) => {

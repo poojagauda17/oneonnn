@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import HeaderSection from "../components/HeaderSection";
 import FooterSection from "../components/FooterSection";
 import ContactForm from "../components/ContactForm";
-import { getAllProductList, postContactUsForm } from "../utils/employee";
+import { getAllProductList, postContactUsForm , addSuperStockerForm} from "../utils/employee";
 
 export default function ContactPage() {
   const [productList, setProductList] = useState([]);
@@ -30,7 +30,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
       <ContactForm onSubmit={handleSubmit} />
       <FooterSection />
     </>

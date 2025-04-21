@@ -6,7 +6,7 @@ import HeaderSection from "../components/HeaderSection";
 import OurStory from "../components/OurStory";
 import FooterSection from "../components/FooterSection";
 import {
-  getAllProductList,
+  getAllProductList, addSuperStockerForm
 } from "../utils/employee";
 import { useState, useEffect } from "react";
 
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
       }, []);
   return (
     <div>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
 
       <OurStory />
 

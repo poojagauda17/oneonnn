@@ -5,7 +5,7 @@ import HeaderSection from "../components/HeaderSection";
 import FooterSection from "../components/FooterSection";
 import OurDistributionSection from "../components/OurDistributionSection";
 import {
-  getAllProductList,
+  getAllProductList, addSuperStockerForm
 } from "../utils/employee"
 
 const Distribution = () => {
@@ -28,7 +28,7 @@ const Distribution = () => {
       }, []);
   return (
     <div>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
       <OurDistributionSection />
       <FooterSection />
     </div>

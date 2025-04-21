@@ -8,7 +8,7 @@ import FooterSection from "../components/FooterSection";
 import { useState, useEffect } from "react";
 
 import {
-  getAllProductList,
+  getAllProductList, addSuperStockerForm
 } from "../utils/employee"
 
 const WhyChooseUs = () => {
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
       }, []);
   return (
     <div>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
 
       <WhyChooseUsSection />
 

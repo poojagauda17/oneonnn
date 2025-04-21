@@ -6,7 +6,7 @@ import BlogSection from "../components/BlogSection";
 import FooterSection from "../components/FooterSection";
 import { getAllBlogList } from "../utils/employee";
 import {
-  getAllProductList,
+  getAllProductList, addSuperStockerForm
 } from "../utils/employee"
 
 const page = () => {
@@ -35,7 +35,7 @@ const page = () => {
 
   return (
     <div>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
 
       <BlogSection style={{ paddingTop: "140px" }} blogList={blogList} />
       <FooterSection />

@@ -5,7 +5,7 @@ import HeaderSection from "../../components/HeaderSection";
 import FooterSection from "../../components/FooterSection";
 import ProductInSection from "../../components/ProductInSection";
 import {
-  getAllProductList,
+  getAllProductList, addSuperStockerForm
 } from "../../utils/employee";
 import { useState, useEffect } from "react";
 
@@ -32,7 +32,7 @@ const HeroSection = () => {
   
   return (
     <div>
-      <HeaderSection productList={productList} />
+      <HeaderSection productList={productList} onSupplierSubmit={addSuperStockerForm}/>
       <ProductInSection productList={productList} />
       <FooterSection />
     </div>
