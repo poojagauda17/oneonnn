@@ -16,7 +16,7 @@ export default function FranchiseSection() {
             We want to be the first choice in all of our beverages existing and
             in pipelines throughout the country.
           </p>
-          <a href="/ourstory" className="franchise-link">KNOW MORE</a>
+          <a href="/ourStory" className="franchise-link">KNOW MORE</a>
         </div>
 
         <div className="card-column center">

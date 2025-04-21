@@ -9,7 +9,7 @@ export default function AboutSection() {
     <section className="about-section-section">
    <div className="about-section">
    <div className="about-left">
-        <Image
+   <Image
           src="/image/Image.png"
           alt="Green Can"
           width={500}

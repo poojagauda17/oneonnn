@@ -94,7 +94,7 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
             <div className="dropdown" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)} onClick={() => setDropdownOpen(!dropdownOpen)}>
               <span className={`nav-link ${dropdownOpen ? "active" : ""}`}>About</span>
               <div className={`dropdown-content ${dropdownOpen ? "show" : ""}`}>
-                <Link href="/ourstory" className="nav-link">Our Story</Link>
+                <Link href="/ourStory" className="nav-link">Our Story</Link>
                 <Link href="/whyChooseUs" className="nav-link">Why Choose Us</Link>
                 <Link href="/distribution" className="nav-link">Our Distributers</Link>
               </div>

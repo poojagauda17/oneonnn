@@ -17,7 +17,7 @@ export default function HeroOrangeSection() {
             for a refreshing and delightful experience.
           </p>
           <button className="hero-btn">
-            <Link href="ourstory">Read More</Link>
+            <Link href="/ourStory">Read More</Link>
           </button>
         </div>
         <div className="hero-image-box">
