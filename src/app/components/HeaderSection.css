@@ -298,6 +298,8 @@ textarea.animated-input {
   object-fit: contain;
   margin-bottom: 10px;
   display: block;
+  margin: auto;
+  margin-bottom: 6px;
 
 }
 .header-logo{
