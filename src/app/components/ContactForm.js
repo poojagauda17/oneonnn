@@ -25,6 +25,10 @@ export default function ContactForm({ onSubmit }) {
       alert("Enter a valid email");
       return;
     }
+    if (form.contact.length !== 10 || isNaN(form.contact)) {
+      alert("Enter a valid 10-digit contact number");
+      return;
+    }
     onSubmit(form);
   };
   return (
