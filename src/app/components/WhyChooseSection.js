@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import "./WhyChooseSection.css";
+import Image from "next/image";
+
 
 const data = [
   {
@@ -58,8 +60,13 @@ export default function WhyChooseUsSection() {
         </div>
 
         <div className="choose-right">
-          <img src="/images/WCU.png" alt="Why Choose Us" />
-        </div>
+ <Image
+          src="/image/Image.png"
+          alt="Green Can"
+          width={500}
+          height={500}
+          className="can-image"
+        />        </div>
       </div>
     </section>
   );
