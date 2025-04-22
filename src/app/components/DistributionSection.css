@@ -2,16 +2,23 @@
   padding: 80px 20px;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
+  
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
+.distribution-right h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #e9d127;
+}
 .distribution-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
+  gap: 125px;
 }
 
 .distribution-left {
@@ -29,7 +36,7 @@
 }
 
 .distribution-right {
-  flex: 1 1 50%;
+  flex: 1 1 45%;
   max-width: 600px;
 }
 

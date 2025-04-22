@@ -17,7 +17,7 @@ export default function DistributionSection() {
 
         {/* Right Text */}
         <div className="distribution-right">
-          <h2>Our Distribution Centers</h2>
+          <h1>Our Distribution Centers</h1>
           <p>
             Hana, the refreshing organic drink, has captivated taste buds across
             various regions, including INDIA and GCC Countries. Our distribution

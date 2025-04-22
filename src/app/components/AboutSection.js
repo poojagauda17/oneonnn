@@ -21,7 +21,7 @@ export default function AboutSection() {
 
       <div className="about-right">
         <h1 className="about-heading">
-          The Perfect Blend of <br /> Health and Taste
+          The Perfect Blend of Health and Taste
         </h1>
         <p className="about-description">
           Discover unparalleled quality with our beverages, meticulously crafted from premium
