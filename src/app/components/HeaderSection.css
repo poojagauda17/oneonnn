@@ -365,6 +365,23 @@ textarea.animated-input {
   border: 1px solid var(--primary);
   color: #000;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.input-error {
+  border: 1px solid #dd2c00 !important;
+}
+.error-text-stocker {
+  color: #dd2c00 !important;
+  font-size: 13px !important;
+  margin-top: -28px !important;}
+
 .close-btn {
   background: transparent;
   border: none;
@@ -427,6 +444,7 @@ textarea.animated-input {
     align-items: flex-start;
     padding: 1rem;
     display: none;
+    gap: 30px !important;
   }
 
   .nav-links.active {
@@ -467,7 +485,7 @@ textarea.animated-input {
     right: 0;
     max-height: 70vh;
     overflow-y: auto;
-    background: #fff;
+    background: var(--secondaryColor);
     z-index: 1000;
   }
 
@@ -494,7 +512,7 @@ textarea.animated-input {
   .product-tile p {
     font-size: 14px;
     margin: 0;
-    color: #222 !important;
+    color: #fff !important;
   }
   .hero-container{
     height: 70px;

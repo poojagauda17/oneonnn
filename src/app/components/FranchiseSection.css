@@ -61,6 +61,52 @@ textarea {
   border: 1px solid var(--primary);
   color: #111;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.error-text {
+  color: #dd2c00 !important;
+  font-size: 13px !important;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+.input-error {
+  border: 1px solid #dd2c00 !important;
+  outline: none;
+}
+.success-text {
+  color: green !important;
+  font-size: 15px !important;
+  margin-top: 12px;
+  font-weight: 500;
+  transition: opacity 0.5s ease;
+}
+
+/* Animation class */
+.animate-fade {
+  opacity: 1;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
 input:focus,
 select:focus,
 textarea:focus {

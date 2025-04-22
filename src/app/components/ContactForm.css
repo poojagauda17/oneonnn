@@ -27,6 +27,27 @@
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.06);
   margin-right: 80px;
 }
+/* Hide arrows in Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-error {
+  border: 1px solid #dd2c00 !important;
+}
+
+.error-text {
+  color: #dd2c00 !important;
+  font-size: 13px;
+  margin-top: 4px !important;
+  margin-bottom: 10px;
+}
 
 .contact-left h2 {
   font-family: 'Bebas Neue', sans-serif;

@@ -21,10 +21,8 @@ export default function ContactPage() {
     try {
       const result = await postContactUsForm(formData);
       console.log("✅ Success Response:", result);
-      alert("Your message has been sent!");
     } catch (error) {
       console.error("❌ API Error:", error?.response?.data || error.message);
-      alert("Something went wrong!");
     }
   };
 
