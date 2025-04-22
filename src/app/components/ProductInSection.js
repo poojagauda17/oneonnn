@@ -28,7 +28,6 @@ export default function ProductInSection({ productList = [] }) {
     { label: "Protein", value: product.protein },
     { label: "Sugar", value: product.sugar },
     { label: "Sodium", value: product.sodium },
-    { label: "Weight", value: product.weight },
     { label: "Vitamin B6", value: product.vitamin_b6 },
     { label: "Vitamin B12", value: product.vitamin_b12 },
     { label: "Vitamin D", value: product.vitamin_d },
@@ -57,9 +56,9 @@ export default function ProductInSection({ productList = [] }) {
           <thead>
             <tr>
               <th style={{ backgroundColor: bgColor, color: "#fff" }}>
-                Nutritional Information per 200ml
+                Nutritional Information
               </th>
-              <th style={{ backgroundColor: bgColor, color: "#fff" }}>Per 200ml</th>
+              <th style={{ backgroundColor: bgColor, color: "#fff" }}>{product.weight}</th>
             </tr>
           </thead>
           <tbody>
