@@ -4,8 +4,11 @@ import Image from "next/image";
 import "./AllFlovorsSection.css";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 
 export default function HeroOrangeSection() {
+  const tiles = Array.from({ length: 64 });
   return (
     <section className="hero-orange-section">
       <div className="hero-content">
@@ -20,16 +23,27 @@ export default function HeroOrangeSection() {
             <Link href="/ourStory">Read More</Link>
           </button>
         </div>
-        <div className="hero-image-box">
-          <Image
-            src="/image/2.jpg"
-            alt="Orange Cans"
-            width={400}
-            height={300}
-            className="hero-image"
-          />
-        </div>
+        <div className="fragmented-container">
+      {tiles.map((_, i) => {
+        const row = Math.floor(i / 8);
+        const col = i % 8;
+        return (
+          <div
+            key={i}
+            className="fragment-tile"
+            style={{
+              backgroundPosition: `${(col / 7) * 100}% ${(row / 7) * 100}%`,
+              animationDelay: `${(row + col) * 100}ms`,
+            }}
+          ></div>
+        );
+      })}
+    </div>
+
+
+      
       </div>
+      
     </section>
   );
 }

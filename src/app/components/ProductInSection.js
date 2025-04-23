@@ -40,11 +40,15 @@ export default function ProductInSection({ productList = [] }) {
 
   return (
     <div className="product-details">
-      <div className="product-banner">
+      <div className="product-banner product-image-det ">
         <img src={product.product_image} alt={product.product_name} />
+        <div className="product-img-details">
+          <h4>Details</h4>
+          <p>{product.details}</p>
+        </div>
       </div>
 
-      <div className="product-content">
+      <div className="product-content product-table">
         <h1>
           <div style={{ color: bgColor }}>{product.product_name}</div>
         </h1>

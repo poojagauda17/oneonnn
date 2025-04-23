@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 140px 20px 100px 20px;
+  padding: 70px 20px 100px 20px;
   max-width: 1200px;
   gap: 80px;
 }
@@ -71,7 +71,22 @@
 .nutrition-table-label{
   margin-bottom: 0px !important;
 }
-
+.product-img-details h4{
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+}
+.product-image-det{
+  flex: 1;
+  min-width: 320px;
+  max-width: 400px;
+}
+.product-table{
+  flex: 1;
+   
+    min-width: 550px;
+}
 .nutrition-table {
   width: 100%;
   border-collapse: collapse;

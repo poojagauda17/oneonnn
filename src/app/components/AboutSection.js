@@ -3,19 +3,41 @@
 import Image from "next/image";
 import Link from "next/link";
 import "./AboutSection.css";
+const GRID_SIZE = 5;
 
 export default function AboutSection() {
+  const totalTiles = GRID_SIZE * GRID_SIZE;
+
   return (
     <section className="about-section-section">
    <div className="about-section">
    <div className="about-left">
-   <Image
+   {/* <Image
           src="/image/Image.png"
           alt="Green Can"
           width={500}
           height={500}
           className="can-image"
-        />
+        /> */}
+   <div className="split-image-section">
+      <div className="image-fragments">
+        {Array.from({ length: totalTiles }).map((_, i) => {
+          const x = (i % GRID_SIZE) * (100 / (GRID_SIZE - 1));
+          const y = Math.floor(i / GRID_SIZE) * (100 / (GRID_SIZE - 1));
+          return (
+            <div
+              key={i}
+              className="fragment"
+              style={{
+                backgroundPosition: `${x}% ${y}%`,
+                animationDelay: `${(i % GRID_SIZE + Math.floor(i / GRID_SIZE)) * 150}ms`,
+              }}
+            />
+          );
+        })}
+      </div>
+
+    </div>
        
       </div>
 

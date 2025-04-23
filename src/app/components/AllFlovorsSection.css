@@ -67,4 +67,51 @@
     width: 100%;
     height: auto;
   }
+  .fragmented-container {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-image: url("/your-image.jpg");
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .fragment-tile {
+    background-image: url("/image/2.jpg");
+    background-size: 800% 800%; /* Since it's 8x8 */
+    animation: explodeMerge 5s infinite;
+  }
+  
+  @keyframes explodeMerge {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    20% {
+      transform: translate(
+        calc(-50px + 100px * var(--randX, 1)),
+        calc(-50px + 100px * var(--randY, 1))
+      );
+      opacity: 0.4;
+    }
+    40% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+  }
   

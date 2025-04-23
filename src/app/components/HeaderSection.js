@@ -8,6 +8,7 @@ import Image from "next/image";
 import "./HeaderSection.css";
 import { toast } from "react-toastify";
 
+
 export default function HeaderSection({ productList = [], onSupplierSubmit }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -16,6 +17,18 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
   const [productOpen, setProductOpen] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [imgSrc, setImgSrc] = useState("/stocker-black.png");
+
+  const handleMouseEnter = () => {
+    setImgSrc("/stocker-black.png"); // optional, reset if needed
+    setTimeout(() => {
+      setImgSrc("/stocker-white.png");
+    }, 200); // delay 200ms before switching
+  };
+
+  const handleMouseLeave = () => {
+    setImgSrc("/stocker-black.png");
+  };
 
   const [form, setForm] = useState({
     name: "",
@@ -197,8 +210,13 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
             <button
               className="stockist-btn mobile-only"
               onClick={() => setOpen(true)}
+
             >
-              <img src="/stocker.png" className="stocker-img" />
+              <div className="stocker-img">
+                {/* <img src="/stocker-black-img.svg" className="stocker-img" /> */}
+              </div>
+              {/* <img src="/stocker-black-img.svg" className="stocker-img" /> */}
+              
               Become a Supplier
             </button>
           </nav>
@@ -220,6 +238,7 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
                 {/* <img src="/stocker.png" className="stocker-img" alt="stocker" /> */}
                 Become a Supplier
               </h2>
+              
               <p className="modal-subtext">
                 Join the Oneonn Revolution! Fill in the details below to be part
                 of our fizzy journey.
