@@ -54,7 +54,7 @@
 }
 
 .choose-item.active h4 {
-  color: var(--thirdColor) ;
+  color: var(--primary) ;
 }
 
 .choose-content {

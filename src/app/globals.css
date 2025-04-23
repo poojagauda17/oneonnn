@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
 @import "tailwindcss";
+
 
 :root {
   --background: #ffffff;
@@ -25,7 +27,7 @@ h2{
   word-spacing: 4px !important;   
   color: var(--primary) !important;      
   margin-bottom: 1rem !important;
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family-heading) !important;
   font-weight: 500 !important;
 
 }

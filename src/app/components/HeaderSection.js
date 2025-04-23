@@ -243,103 +243,130 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
                 Join the Oneonn Revolution! Fill in the details below to be part
                 of our fizzy journey.
               </p>
-              <form className="stockist-form" onSubmit={handleSubmit}>
-                <input
-                  name="name"
-                  placeholder="Full Name *"
-                  value={form.name}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.name ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.name && <p className="error-text-stocker">{errors.name}</p>}
-                <input
-                  name="business_name"
-                  placeholder="Business Name (if any)"
-                  value={form.business_name}
-                  onChange={handleChange}
-                  className="animated-input"
-                />
-                <input
-                  name="state"
-                  placeholder="State *"
-                  value={form.state}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.state ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.state && <p className="error-text-stocker">{errors.state}</p>}
-                <input
-                  name="city"
-                  placeholder="City *"
-                  value={form.city}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.city ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.city && <p className="error-text-stocker">{errors.city}</p>}
-                <input
-                  name="email_id"
-                  type="email"
-                  placeholder="Email Address *"
-                  value={form.email_id}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.email_id ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.email_id && <p className="error-text-stocker">{errors.email_id}</p>}
-                <input
-                  name="mobile_no"
-                  type="number"
-                  placeholder="Phone Number *"
-                  value={form.mobile_no}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.mobile_no ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.mobile_no && (
-                  <p className="error-text-stocker">{errors.mobile_no}</p>
-                )}
-                <select
-                  name="existing_distribution_experience"
-                  value={form.existing_distribution_experience}
-                  onChange={handleChange}
-                  className={`animated-input inquiry-select ${
-                    errors.existing_distribution_experience ? "input-error" : ""
-                  }`}
-                >
-                  <option value="">
-                    Do you have distribution experience? *
-                  </option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
-                </select>
-                {errors.existing_distribution_experience && (
-                  <p className="error-text-stocker">{errors.existing_distribution_experience}</p>
-                )}
-                <textarea
-                  name="want_to_join"
-                  rows="4"
-                  placeholder="Why do you want to join Oneonn? *"
-                  value={form.want_to_join}
-                  onChange={handleChange}
-                  className={`animated-input ${
-                    errors.want_to_join ? "input-error" : ""
-                  }`}
-                />{" "}
-                {errors.want_to_join && (
-                  <p className="error-text-stocker">{errors.want_to_join}</p>
-                )}
-              <button type="submit" className="submit-btn" disabled={isSubmitting}>
-  {isSubmitting ? "Submitting..." : "Apply Now"}
-</button>
+              <form className="stockist-form-float" onSubmit={handleSubmit}>
+  <div className="float-field">
+    <input
+      name="name"
+      placeholder=" "
+      value={form.name}
+      onChange={handleChange}
+      className={errors.name ? "float-input error" : "float-input"}
+    />
+    <label>Full Name *</label>
+    {errors.name && <p className="float-error">{errors.name}</p>}
+  </div>
 
-              </form>
+  <div className="float-field">
+    <input
+      name="business_name"
+      placeholder=" "
+      value={form.business_name}
+      onChange={handleChange}
+      className="float-input"
+    />
+    <label>Business Name (if any)</label>
+  </div>
+
+  <div className="float-field">
+    <input
+      name="state"
+      placeholder=" "
+      value={form.state}
+      onChange={handleChange}
+      className={errors.state ? "float-input error" : "float-input"}
+    />
+    <label>State *</label>
+    {errors.state && <p className="float-error">{errors.state}</p>}
+  </div>
+
+  <div className="float-field">
+    <input
+      name="city"
+      placeholder=" "
+      value={form.city}
+      onChange={handleChange}
+      className={errors.city ? "float-input error" : "float-input"}
+    />
+    <label>City *</label>
+    {errors.city && <p className="float-error">{errors.city}</p>}
+  </div>
+
+  <div className="float-field">
+    <input
+      name="email_id"
+      type="email"
+      placeholder=" "
+      value={form.email_id}
+      onChange={handleChange}
+      className={errors.email_id ? "float-input error" : "float-input"}
+    />
+    <label>Email Address *</label>
+    {errors.email_id && <p className="float-error">{errors.email_id}</p>}
+  </div>
+
+  <div className="float-field">
+    <input
+      name="mobile_no"
+      type="text"
+      placeholder=" "
+      value={form.mobile_no}
+      onChange={(e) => {
+        const value = e.target.value;
+        if (/^\d{0,10}$/.test(value)) {
+          setForm((prev) => ({ ...prev, mobile_no: value }));
+          if (value.length === 10) {
+            setErrors((prev) => ({ ...prev, mobile_no: "" }));
+          }
+        }
+      }}
+      onBlur={() => {
+        if (form.mobile_no.length !== 10) {
+          setErrors((prev) => ({
+            ...prev,
+            mobile_no: "Valid Number is required",
+          }));
+        }
+      }}
+      className={errors.mobile_no ? "float-input error" : "float-input"}
+    />
+    <label>Phone Number *</label>
+    {errors.mobile_no && <p className="float-error">{errors.mobile_no}</p>}
+  </div>
+
+  <div className="float-field">
+    <select
+      name="existing_distribution_experience"
+      value={form.existing_distribution_experience}
+      onChange={handleChange}
+      className={errors.existing_distribution_experience ? "float-input error" : "float-input"}
+    >
+      <option value="">Do you have distribution experience? *</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    {errors.existing_distribution_experience && (
+      <p className="float-error">{errors.existing_distribution_experience}</p>
+    )}
+  </div>
+
+  <div className="float-field">
+    <textarea
+      name="want_to_join"
+      rows="4"
+      placeholder=" "
+      value={form.want_to_join}
+      onChange={handleChange}
+      className={errors.want_to_join ? "float-input error" : "float-input"}
+    />
+    <label>Why do you want to join Oneonn? *</label>
+    {errors.want_to_join && <p className="float-error">{errors.want_to_join}</p>}
+  </div>
+
+  <button type="submit" className="custom-submit-button" disabled={isSubmitting}>
+    {isSubmitting ? "Submitting..." : "Apply Now"}
+  </button>
+</form>
+
             </div>
           </div>
         )}

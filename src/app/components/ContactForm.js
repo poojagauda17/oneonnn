@@ -84,75 +84,94 @@ export default function ContactForm({ onSubmit }) {
 
         <section className="contact-section-container">
           <div className="contact-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Full Name *"
-                    value={form.name}
-                    onChange={handleChange}
-                    className={errors.name ? "input-error" : ""}
-                  />
-                  {errors.name && <p className="error-text">{errors.name}</p>}
-                </div>
+          <form className="contact-form" onSubmit={handleSubmit}>
+  <div className="form-row">
+    <div className="form-group">
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name *"
+        value={form.name}
+        onChange={handleChange}
+        className={errors.name ? "input input-error" : "input"}
+      />
+      <label>Full Name *</label>
+      {errors.name && <p className="error-text">{errors.name}</p>}
+    </div>
 
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address *"
-                    value={form.email}
-                    onChange={handleChange}
-                    className={errors.email ? "input-error" : ""}
-                  />
-                  {errors.email && <p className="error-text">{errors.email}</p>}
-                </div>
-              </div>
+    <div className="form-group">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address *"
+        value={form.email}
+        onChange={handleChange}
+        className={errors.email ? "input input-error" : "input"}
+      />
+      <label>Email Address *</label>
+      {errors.email && <p className="error-text">{errors.email}</p>}
+    </div>
+  </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <input
-                    type="number"
-                    name="contact"
-                    placeholder="Contact Number *"
-                    value={form.contact}
-                    onChange={handleChange}
-                    className={errors.contact ? "input-error" : ""}
-                  />
-                  {errors.contact && <p className="error-text">{errors.contact}</p>}
-                </div>
+  <div className="form-row">
+    <div className="form-group">
+      <input
+        type="text"
+        name="contact"
+        placeholder="Contact Number *"
+        value={form.contact}
+        onChange={(e) => {
+          const value = e.target.value;
+          if (/^\d{0,10}$/.test(value)) {
+            setForm((prev) => ({ ...prev, contact: value }));
+        
+            if (value.length === 10) {
+              setErrors((prev) => ({ ...prev, contact: "" }));
+            }
+          }
+        }}
+        
+        className={errors.contact ? "input input-error" : "input"}
+      />
+      <label>Contact Number *</label>
+      {errors.contact && <p className="error-text">{errors.contact}</p>}
+    </div>
 
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject *"
-                    value={form.subject}
-                    onChange={handleChange}
-                    className={errors.subject ? "input-error" : ""}
-                  />
-                  {errors.subject && <p className="error-text">{errors.subject}</p>}
-                </div>
-              </div>
+    <div className="form-group">
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject *"
+        value={form.subject}
+        onChange={handleChange}
+        className={errors.subject ? "input input-error" : "input"}
+      />
+      <label>Subject *</label>
+      {errors.subject && <p className="error-text">{errors.subject}</p>}
+    </div>
+  </div>
 
-              <div className="form-group">
-                <textarea
-                  name="message"
-                  rows="5"
-                  placeholder="Message *"
-                  value={form.message}
-                  onChange={handleChange}
-                  className={errors.message ? "input-error" : ""}
-                ></textarea>
-                {errors.message && <p className="error-text">{errors.message}</p>}
-              </div>
+  <div className="form-row">
+    <div className="form-group full-width">
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Message *"
+        value={form.message}
+        onChange={handleChange}
+        className={errors.message ? "input input-error" : "input"}
+      ></textarea>
+      <label>Message *</label>
+      {errors.message && <p className="error-text">{errors.message}</p>}
+    </div>
+  </div>
 
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send"}
-              </button>
-            </form>
+  <button className="submit-button-animation" type="submit" disabled={isSubmitting}>
+    {isSubmitting ? "Sending..." : "Send"}
+  </button>
+</form>
+
+
           </div>
         </section>
       </div>
