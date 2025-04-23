@@ -88,12 +88,12 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 16px;
   padding: 14px 10px 6px 10px;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border: 2px solid #ccc;
   background: transparent;
   outline: none;
   transition: all 0.3s ease;
   font-family: inherit;
-  border-radius: 0px !important;
+  border-radius: 30px !important;
 }
 
 .float-input:focus,
@@ -109,8 +109,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .float-field label {
   position: absolute;
-  left: 10px;
-  top: 14px;
+  top: 16px;
+  left: 19px;
   font-size: 16px;
   color: #999;
   transition: 0.3s ease;
@@ -129,13 +129,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .float-input.error,
 .float-field select.error,
 .float-field textarea.error {
-  border-bottom-color: #dd2c00 !important;
+  border: 2px solid #dd2c00 !important;
 }
 
 .float-error {
   color: #dd2c00 !important;
   font-size: 13px !important;
   margin-top: 4px !important;
+  margin-left: 10px !important;
 }
 
 .custom-submit-button {

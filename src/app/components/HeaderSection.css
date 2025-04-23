@@ -24,7 +24,7 @@
   color: #fff;
 }
 .logo span {
-  color: red;
+  color: #dd2c00;
 }
 
 .nav-links {
@@ -189,17 +189,19 @@
   font-size: 16px;
   padding: 14px 10px 6px 10px;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border: 2px solid #ccc;
   background: transparent;
   outline: none;
   transition: all 0.3s ease;
   font-family: inherit;
+  border-radius: 30px ;
+  height: 54px;
 }
 
 .float-input:focus,
 .float-field select:focus,
 .float-field textarea:focus {
-  border-bottom-color: #f2c200;
+  border: 1px solid #f2c200;
 }
 
 .float-input::placeholder,
@@ -209,8 +211,8 @@
 
 .float-field label {
   position: absolute;
-  left: 10px;
-  top: 14px;
+  top: 16px;
+  left: 19px;
   font-size: 16px;
   color: #999;
   transition: 0.3s ease;
@@ -221,21 +223,23 @@
 .float-input:not(:placeholder-shown) + label,
 .float-field textarea:focus + label,
 .float-field textarea:not(:placeholder-shown) + label {
-  top: -10px;
-  font-size: 12px;
+  top: 6px !important;
+  left: 21px !important;
+    font-size: 12px;
   color: #f2c200;
 }
 
 .float-input.error,
 .float-field select.error,
 .float-field textarea.error {
-  border-bottom-color: red !important;
+  border: 2px solid #dd2c00 !important;
 }
 
 .float-error {
-  color: red;
+  color: #dd2c00 !important;
   font-size: 13px;
   margin-top: 4px;
+  margin-left: 10px;
 }
 
 .custom-submit-button {

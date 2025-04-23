@@ -269,19 +269,22 @@ export default function FranchiseForm({ onSubmitForm }) {
   </div>
 
   <div className="float-field">
-    <select
+  <select
       name="type_of_enquiry"
       value={form.type_of_enquiry}
       onChange={handleChange}
       className={errors.type_of_enquiry ? "float-input error" : "float-input"}
     >
-      <option value="">Type of Enquiry *</option>
+     <option value="">Type of Enquiry *</option>
       <option value="general">General</option>
       <option value="distribution">Distribution</option>
       <option value="collaboration">Collaboration</option>
     </select>
-    {errors.type_of_enquiry && <p className="float-error">{errors.type_of_enquiry}</p>}
+    {errors.type_of_enquiry && (
+      <p className="float-error">{errors.type_of_enquiry}</p>
+    )}
   </div>
+
 
   <div className="float-field">
     <textarea
