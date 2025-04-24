@@ -56,6 +56,9 @@ h1{
   border-radius: 10px !important;
   width: 120px !important;
 }
+.text-center{
+  text-align: center;
+}
 .read-more-button:hover{
   background-color: transparent !important;
   color: var(--primary) !important;

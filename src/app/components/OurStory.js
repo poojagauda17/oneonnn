@@ -7,9 +7,9 @@ import "./OurStory.css";
 const OurStory = () => {
   return (
     <section>
-      <div className="health-blend-section">
+      <div className="health-blend-section text-center">
         <div className="text-side">
-          <h2>The Perfect Blend of Health and Taste</h2>
+          <h2 className="text-center">The Perfect Blend of Health and Taste</h2>
           <p>
           Founded in 2018 with a love for fizzy fun and local pride, Oneonn started as a humble venture and quickly became a favorite in the neighborhood. With quality ingredients, irresistible taste, and vibrant branding, we’re on a mission to make every drink a celebration.
           </p>
