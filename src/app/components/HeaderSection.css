@@ -379,7 +379,7 @@ textarea.animated-input {
   padding: 10px 60px;
   z-index: 9999;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  display: block;
+  display: none;
 }
 
 
