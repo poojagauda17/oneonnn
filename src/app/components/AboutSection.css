@@ -137,7 +137,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  width: 100%;
+  width: 101%;
   height: 100%;
   position: relative;
 }

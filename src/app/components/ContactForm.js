@@ -166,9 +166,11 @@ export default function ContactForm({ onSubmit }) {
     </div>
   </div>
 
-  <button className="read-more-button" type="submit" disabled={isSubmitting}>
+ <div className="text-center">
+ <button className="read-more-button" type="submit" disabled={isSubmitting}>
     {isSubmitting ? "Sending..." : "Send"}
   </button>
+ </div>
 </form>
 
 

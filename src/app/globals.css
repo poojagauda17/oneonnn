@@ -86,3 +86,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-family-para);
 }
+@media (max-width: 768px){
+  .text-center-only-mobile{
+    text-align: center;
+  }
+}

@@ -299,9 +299,11 @@ export default function FranchiseForm({ onSubmitForm }) {
     {errors.message && <p className="float-error">{errors.message}</p>}
   </div>
 
-  <button className="read-more-button" type="submit" disabled={isSubmitting}>
+ <div className="text-center">
+ <button className="read-more-button" type="submit" disabled={isSubmitting}>
     {isSubmitting ? "Sending..." : "Send"}
   </button>
+ </div>
 </form>
 
 
