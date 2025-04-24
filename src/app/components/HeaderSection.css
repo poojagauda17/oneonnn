@@ -8,7 +8,7 @@
   
 }
 .hero-container{
-  height: 79.19px
+  height: 78px
 }
 .header-container {
   display: flex;
@@ -31,7 +31,7 @@
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .nav-link {

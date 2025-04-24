@@ -1,7 +1,10 @@
 .hero-orange-section {
-    padding: 60px 40px;
-    background-color: #ffffff;
-    font-family: "Poppins", sans-serif;
+  padding: 80px 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  
+  max-width: 1200px;
+  margin: 0 auto;
   }
   
   .hero-content {
@@ -9,7 +12,6 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1100px;
     margin: 0 auto;
     column-gap: 40px; /* reduced horizontal gap */
     row-gap: 40px;
@@ -67,9 +69,30 @@
     width: 100%;
     height: auto;
   }
-  .fragmented-container {
-    width: 400px;
+  .flovor-section-split-image-section {
+    position: relative;
+    width: 80%;
     height: 400px;
+    margin: auto;
+    perspective: 1000px;
+  }
+  .flovors-section-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  
+  }
+  /* .flovors-section-left{
+    flex: 1;
+    padding-left: 30px;
+    min-width: 300px;
+  } */
+  .fragmented-container {
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
@@ -114,4 +137,49 @@
       opacity: 1;
     }
   }
-  
+  /* Tablet View */
+/* Tablet View (Ensure 50% - 50% split) */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .hero-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .flovors-section-left,
+  .flovors-section-right {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .flovor-section-split-image-section {
+    height: 300px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  .flovor-section-split-image-section {
+    height: 280px;
+  }
+  .hero-content{
+    text-align: center;
+  }
+}
+@media (max-width: 768px){
+  .hero-content{
+    text-align: center;
+  }
+}

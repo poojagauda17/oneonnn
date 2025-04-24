@@ -28,7 +28,7 @@ export default function DistributionSection() {
             production lines and your doorstep, ensuring a seamless flow from
             order to delivery.
           </p>
-          <button className="distribution-btn">
+          <button className="read-more-button">
             <Link href="/distribution">Read More</Link>
           </button>
         </div>

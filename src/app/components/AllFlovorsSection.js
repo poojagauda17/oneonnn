@@ -12,6 +12,7 @@ export default function HeroOrangeSection() {
   return (
     <section className="hero-orange-section">
       <div className="hero-content">
+        <div className="flovors-section-left">
         <div className="hero-text">
           <h1>The Perfect Blend of  Health and Taste</h1>
           <p>
@@ -19,11 +20,15 @@ export default function HeroOrangeSection() {
             premium natural ingredients like real fruit pulps and pure spring water
             for a refreshing and delightful experience.
           </p>
-          <button className="hero-btn">
+          <button className="read-more-button">
             <Link href="/ourStory">Read More</Link>
           </button>
         </div>
-        <div className="fragmented-container">
+        </div>
+        
+        <div className="flovors-section-right">
+          <div className="flovor-section-split-image-section">
+          <div className="fragmented-container">
       {tiles.map((_, i) => {
         const row = Math.floor(i / 8);
         const col = i % 8;
@@ -39,6 +44,8 @@ export default function HeroOrangeSection() {
         );
       })}
     </div>
+          </div>
+        </div>
 
 
       

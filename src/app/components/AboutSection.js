@@ -50,8 +50,8 @@ export default function AboutSection() {
           natural ingredients like real fruit pulps and pure spring water for a refreshing and
           delightful experience.
         </p>
-        <button className="about-button">
-          <Link href="about">
+        <button className="read-more-button">
+          <Link href="/about">
           Read More
           </Link>
         </button>

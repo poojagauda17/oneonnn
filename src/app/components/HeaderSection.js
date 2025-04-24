@@ -362,8 +362,8 @@ export default function HeaderSection({ productList = [], onSupplierSubmit }) {
     {errors.want_to_join && <p className="float-error">{errors.want_to_join}</p>}
   </div>
 
-  <button type="submit" className="custom-submit-button" disabled={isSubmitting}>
-    {isSubmitting ? "Submitting..." : "Apply Now"}
+  <button type="submit" className="read-more-button" disabled={isSubmitting}>
+    {isSubmitting ? "Submitting..." : "Submit"}
   </button>
 </form>
 

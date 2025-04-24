@@ -7,9 +7,8 @@
   
 }
 .banner-hero-image img{
-  height: 700px;
+  height: auto;
   width: 100%;
-  margin-top: -100px;
 }
 .hero-banner-img{
   color: black;

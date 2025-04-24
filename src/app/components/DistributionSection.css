@@ -67,3 +67,12 @@
 .distribution-btn:hover {
   background-color: #ffcc00;
 }
+@media (max-width: 768px){
+  .distribution-right{
+    text-align: center;
+  }
+  .distribution-wrapper {
+    text-align: center;
+    gap: 70px;
+  }
+}
