@@ -139,7 +139,7 @@ export default function FranchiseForm({ onSubmitForm }) {
       <section className="join-distribution-section">
         {/* Top Text Section */}
         <div className="join-intro">
-          <h2 className="highlight-heading">
+          <h2 className="highlight-heading text-center">
             Join our partnership, where your ideas
             <br />
             meet our expertise
