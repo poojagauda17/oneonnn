@@ -372,7 +372,7 @@ textarea.animated-input {
 /* Mega menu - full width */
 .mega-menu {
   position: fixed;               /* fix to the entire viewport */
-  top: 60px;                     /* match your navbar height */
+  top: 58px;                     /* match your navbar height */
   left: 0;                       /* align to screen edge */
   width: 100vw;                  /* full width */
   background-color: #1f1f1f;

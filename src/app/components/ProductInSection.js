@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import "./ProductInSection.css";
 
 // fallback colors array (rotate if no bgColor from API)
-const bgColors = ["#fe792c", "#fe9102","#ff9203", "#6f6820", "##c5da01", "#007b5e"];
+const bgColors = ["#fe792c", "#fe9102","#ff9203", "#6f6820", "#c5da01", "#007b5e"];
 
 export default function ProductInSection({ productList = [] }) {
   const params = useParams();
@@ -50,7 +50,7 @@ export default function ProductInSection({ productList = [] }) {
 
       <div className="product-content product-table">
         <h1>
-          <div style={{ color: bgColor }}>{product.product_name}</div>
+          <div style={{ color: bgColor }} >{product.product_name}</div>
         </h1>
         <p>
           <strong>Ingredients:</strong> {product.ingredients}
