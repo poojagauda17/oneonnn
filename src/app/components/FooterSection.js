@@ -27,15 +27,15 @@ export default function FooterSection() {
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="#">Our Brands</a>
+              <a href="/">Our Brands</a>
             </li>
             <li>
-              <a href="#">Partners</a>
+              <a href="/">Partners</a>
             </li>
           </ul>
           <ul>
             <li>
-              <a href="#">Services</a>
+              <a href="/">Services</a>
             </li>
             <li>
               <a href="/blog">Our Blog</a>
